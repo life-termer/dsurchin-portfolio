@@ -41,15 +41,3 @@ export const cursorOffSet = function (e) {
   this.style.setProperty("--cursor-x", x + "px");
   this.style.setProperty("--cursor-y", y + "px");
 };
-
-// document.querySelectorAll(".use-cases-grid, .features-grid").forEach((grid) => {
-//   grid.addEventListener("mousemove", function (e) {
-//     this.querySelectorAll(".use-case-card, .feature-card").forEach((card) => {
-//       const rect = card.getBoundingClientRect();
-//       const x = e.clientX - rect.left;
-//       const y = e.clientY - rect.top;
-//       card.style.setProperty("--cursor-x", x + "px");
-//       card.style.setProperty("--cursor-y", y + "px");
-//     });
-//   });
-// });

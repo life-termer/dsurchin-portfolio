@@ -106,19 +106,20 @@ const GlobalStyles = createGlobalStyle`
 }
 
 html {
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
   overflow: hidden;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   color: var(--color-grey-700);
-
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
-  line-height: 1.5;
+  line-height: 1.4;
   font-size: 1.6rem;
-  
 }
   /* width */
   ::-webkit-scrollbar {
@@ -180,18 +181,21 @@ ul {
   list-style: none;
 }
 
-p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
   overflow-wrap: break-word;
   hyphens: auto;
-  text-shadow: #FC0 1px 0 10px;
-}
+  text-shadow: var(--color-yellow-700) 1px 0 10px;
 
+}
 img {
   max-width: 100%;
 
