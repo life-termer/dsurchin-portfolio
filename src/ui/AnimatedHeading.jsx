@@ -1,25 +1,42 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h1`
+  ${(props) =>
+    props.as === "h1" &&
+    css`
+      font-size: 4rem;
+    `}
+  ${(props) =>
+    props.as === "h2" &&
+    css`
+      font-size: 3.5rem;
+    `}
+  ${(props) =>
+    props.as === "h3" &&
+    css`
+      font-size: 3rem;
+    `}
+  ${(props) =>
+    props.as === "h4" &&
+    css`
+      font-size: 2rem;
+    `}
+  line-height: 1.4;
   font-weight: 200;
   span {
     opacity: 0;
   }
 `;
 
-{
-  /* TODO: add type prop = h1, h2 etc... */
-}
-function AnimatedHeading({ heading, id, delay = 0 }) {
-  const h2 = useRef();
-  const duration = 0.3;
+function AnimatedHeading({ heading, id, delay = 0, as }) {
+  const ref = useRef();
+  const duration = 0.4;
   const stagger = 0.1;
   const chars = heading.split("");
   const ease = "power1.out";
-  const tlDelay = `-=${(duration + chars.length * stagger).toFixed(2)}`;
 
   useGSAP(() => {
     new gsap.timeline()
@@ -33,11 +50,11 @@ function AnimatedHeading({ heading, id, delay = 0 }) {
       .to(
         `#${id} span`,
         { opacity: 1, duration: duration, stagger: stagger, ease: ease },
-        tlDelay
+        "-=100%"
       );
   });
   return (
-    <StyledHeading ref={h2} id={id}>
+    <StyledHeading ref={ref} id={id} as={as}>
       {chars.map((char, index) => {
         return <span key={index}>{char}</span>;
       })}

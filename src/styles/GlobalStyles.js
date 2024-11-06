@@ -39,6 +39,8 @@ const GlobalStyles = createGlobalStyle`
     
     --image-grayscale: 0;
     --image-opacity: 100%;
+
+    --color-bg-tile: #e5e7eb;
   }
   
   &.dark-mode {
@@ -77,6 +79,8 @@ const GlobalStyles = createGlobalStyle`
 
     --image-grayscale: 10%;
     --image-opacity: 90%;
+
+    --color-bg-tile: #17181d;
   }
 /* Indigo */
   --color-brand-50: #eef2ff;

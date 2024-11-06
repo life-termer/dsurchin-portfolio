@@ -1,22 +1,19 @@
 import styled from "styled-components";
 import DarkModeToggle from "./DarkModeToggle";
+import SliderIcons from "../features/layout/SliderIcons";
+import { tags } from "../data/data-tags";
 
 const StyledHeader = styled.header`
-  background-color: var(--color-grey-500);
-  padding: 1.2rem 4.8rem;
-  border-bottom: 1px solid var(--color-grey-900);
-  display: flex;
-  gap: 2.4rem;
-  align-items: center;
-  justify-content: center;
+  border-bottom: 2px solid var(--color-grey-300);
   position: relative;
-  z-index: 10;
+  z-index: 100;
 `;
 
 function Header() {
   return (
     <StyledHeader>
-      <DarkModeToggle />
+      <SliderIcons slides={tags} reverse={true} />
+      {/* <DarkModeToggle /> */}
     </StyledHeader>
   );
 }
