@@ -4,6 +4,8 @@ import { useRef } from "react";
 import styled, { css } from "styled-components";
 
 const StyledHeading = styled.h1`
+  text-shadow: var(--color-brand) 1px 0 8px;
+  transition: all 0.3s ease-out;
   ${(props) =>
     props.as === "h1" &&
     css`

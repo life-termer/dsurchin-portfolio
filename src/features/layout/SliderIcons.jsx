@@ -6,6 +6,8 @@ import { Tooltip } from "react-tooltip";
 import "swiper/css";
 import "swiper/css/autoplay";
 import styled from "styled-components";
+import { randomize } from "../../utils/helpers";
+import { useMemo } from "react";
 
 const SwiperWrapper = styled.div`
   width: 100%;
@@ -43,11 +45,19 @@ const SwiperWrapper = styled.div`
     -o-transition-timing-function: linear !important;
     transition-timing-function: linear !important;
     height: 28px;
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
   .react-tooltip {
     font-size: 0.75rem;
     background: var(--color-grey-800);
     color: var(--color-grey-0);
+  }
+  svg {
+    height: 24px;
   }
   svg:focus-visible,
   svg:focus {
@@ -56,6 +66,7 @@ const SwiperWrapper = styled.div`
 `;
 // TODO: mobile slides number
 function SliderIcons({ slides, reverse }) {
+  const randomSlides = useMemo(() => randomize(slides), [slides]);
   return (
     <SwiperWrapper>
       <Swiper
@@ -67,7 +78,7 @@ function SliderIcons({ slides, reverse }) {
         allowTouchMove={false}
         autoplay={{ delay: 0, reverseDirection: reverse }}
       >
-        {slides.map((icon, index) => {
+        {randomSlides.map((icon, index) => {
           const { icon: Icon, name } = icon;
           return (
             <SwiperSlide key={index}>

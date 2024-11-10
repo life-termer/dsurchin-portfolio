@@ -40,7 +40,10 @@ const GlobalStyles = createGlobalStyle`
     --image-grayscale: 0;
     --image-opacity: 100%;
 
-    --color-bg-tile: #e5e7eb;
+    --color-bg-tile: #d1d5db;
+    --color-brand: #161D6F;
+    --color-brand-hover: #68D2E8;
+    --card-border: var(--color-grey-400);
   }
   
   &.dark-mode {
@@ -81,6 +84,9 @@ const GlobalStyles = createGlobalStyle`
     --image-opacity: 90%;
 
     --color-bg-tile: #17181d;
+    --color-brand: #FDDE55;
+    --color-brand-hover: #FEEFAD;
+    --card-border: var(--color-grey-400);
   }
 /* Indigo */
   --color-brand-50: #eef2ff;
@@ -91,6 +97,11 @@ const GlobalStyles = createGlobalStyle`
   --color-brand-700: #4338ca;
   --color-brand-800: #3730a3;
   --color-brand-900: #312e81;
+
+  --color-brand-blue-100: #03AED2;
+  --color-brand-blue-50: #68D2E8;
+  --color-brand-yellow-100: #FDDE55;
+  --color-brand-yellow-50: #FEEFAD;
 
   --border-radius-tiny: 3px;
   --border-radius-sm: 5px;
@@ -167,7 +178,7 @@ input:focus,
 button:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid var(--color-brand-600);
+  outline: 1px solid transparent;
   outline-offset: -1px;
 }
 
@@ -197,7 +208,6 @@ h6 {
   font-style: normal;
   overflow-wrap: break-word;
   hyphens: auto;
-  text-shadow: var(--color-yellow-700) 1px 0 10px;
 
 }
 img {

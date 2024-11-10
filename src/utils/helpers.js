@@ -29,15 +29,23 @@ export const formatCurrency = (value) =>
     value
   );
 
-//Cursor glow effect
+//Cursor position
 export const cursorOffSet = function (e) {
   const rect = this.getBoundingClientRect();
   const x = e.clientX - rect.left;
   const y = e.clientY - rect.top;
-  // setTimeout(() => {
-  //   this.style.setProperty("--cursor-x", x + "px");
-  //   this.style.setProperty("--cursor-y", y + "px");
-  // }, 100);
-  this.style.setProperty("--cursor-x", x + "px");
-  this.style.setProperty("--cursor-y", y + "px");
+  const xp = (x / window.innerWidth).toFixed(2);
+  const yp = (y / window.innerHeight).toFixed(2);
+  this.style.setProperty("--x", x);
+  this.style.setProperty("--y", y);
+  this.style.setProperty("--xp", xp);
+  this.style.setProperty("--yp", yp);
+};
+
+// Randomize array
+export const randomize = (arr) => {
+  return arr
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
 };

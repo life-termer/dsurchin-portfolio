@@ -1,20 +1,25 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const ButtonIcon = styled.button`
+  width: 100%;
+  height: 100%;
   background: none;
   border: none;
-  padding: 0.6rem;
   border-radius: var(--border-radius-sm);
   transition: all 0.2s;
 
   &:hover {
-    background-color: var(--color-grey-100);
+    svg {
+      filter: drop-shadow(0 0 2px var(--color-brand-hover));
+    }
   }
 
-  & svg {
-    width: 2.2rem;
-    height: 2.2rem;
-    color: var(--color-brand-600);
+  svg {
+    width: 100%;
+    height: auto;
+    color: var(--color-brand);
+    filter: drop-shadow(0 0 10px var(--color-brand));
+    transition: all 0.3s ease-out;
   }
 `;
 
