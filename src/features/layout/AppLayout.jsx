@@ -1,14 +1,14 @@
 import { Outlet, useLocation } from "react-router-dom";
 import styled, { css } from "styled-components";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../../ui/Header";
+import Footer from "../../ui/Footer";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import LayoutBackground from "./LayoutBackground";
-import DarkModeToggle from "./DarkModeToggle";
-import { useMouseMove } from "../hooks/useMouseMove";
+import LayoutBackground from "../../ui/LayoutBackground";
+import DarkModeToggle from "../../ui/DarkModeToggle";
+import { useMouseMove } from "../../hooks/useMouseMove";
 import HomeLayout from "./HomeLayout";
 
 gsap.registerPlugin(ScrollTrigger);

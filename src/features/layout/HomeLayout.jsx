@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import Card from "../ui/Card";
-import AnimatedHeading from "../ui/AnimatedHeading";
+import Card from "../../ui/Card";
+import AnimatedHeading from "../../ui/AnimatedHeading";
 import { useLocation } from "react-router-dom";
 
 const grow = "60%";
@@ -16,6 +16,7 @@ const StyledHomeLayout = styled.div`
   top: 28px;
   width: 100%;
   left: 0;
+  z-index: 99;
   ${(props) =>
     props.$page === "/" &&
     css`

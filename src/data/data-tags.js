@@ -53,7 +53,7 @@ export const tags = [
   },
   {
     id: "009",
-    name: "TanStack Query(FKA React Query)",
+    name: "TanStack Query",
     icon: SiReactquery,
   },
   {

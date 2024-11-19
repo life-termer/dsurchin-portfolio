@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles";
-import AppLayout from "./ui/AppLayout";
+import AppLayout from "./features/layout/AppLayout";
 import Home from "./pages/Home";
 import { DarkModeProvider } from "./context/DarkModeContext";
 import Work from "./pages/Work";
@@ -10,8 +10,8 @@ import Contact from "./pages/Contact";
 function App() {
   return (
     <DarkModeProvider>
+      <GlobalStyles />
       <BrowserRouter>
-        <GlobalStyles />
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Home />} />

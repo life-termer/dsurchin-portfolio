@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Filters from "../ui/Filters";
 
 const StyledContact = styled.div`
   height: 100vh;

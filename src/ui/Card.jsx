@@ -33,10 +33,8 @@ const StyledCard = styled.div`
     background-position: 50% 50%;
     background-attachment: fixed;
 
-    /* touch-action: none; */
     &::before,
     &::after {
-      /* pointer-events: none; */
       content: "";
       position: absolute;
       inset: calc(var(--border-size) * -1);
@@ -63,16 +61,6 @@ const StyledCard = styled.div`
       filter: brightness(1);
     }
   }
-  &:hover {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      text-shadow: var(--color-brand) 1px 0 3px;
-    }
-  }
 
   ${(props) =>
     props.type === "home" &&
@@ -81,6 +69,16 @@ const StyledCard = styled.div`
       position: absolute;
       width: 50%;
       height: 50%;
+      &:hover {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          text-shadow: var(--color-brand) 1px 0 3px;
+        }
+      }
       &:nth-child(1) {
         top: 0;
         left: 0;
@@ -120,6 +118,27 @@ const StyledCard = styled.div`
           }
         `}
     `}
+
+  ${(props) =>
+    props.type === "filter" &&
+    css`
+      padding: 10px 12px;
+      min-width: 210px;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-left: 6px;
+      }
+    `}
+  ${(props) =>
+    props.type === "project" &&
+    css`
+      width: 100%;
+      height: 100%;
+    `}
   ${(props) =>
     props.disabled &&
     css`
@@ -144,9 +163,10 @@ function Card({ type, link, disabled, children }) {
       data-glow={true}
       $active={link === pathname}
       onClick={() => {
-        setTimeout(() => {
-          navigate(link);
-        }, 300);
+        if (link)
+          setTimeout(() => {
+            navigate(link);
+          }, 300);
       }}
     >
       {children}

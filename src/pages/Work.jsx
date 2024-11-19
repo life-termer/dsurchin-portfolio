@@ -1,31 +1,7 @@
-import styled from "styled-components";
-
-const StyledWork = styled.div`
-  height: 100vh;
-`;
+import WorkLayout from "../features/layout/WorkLayout";
 
 function Work() {
-  return (
-    <>
-      <StyledWork>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-        <div>Project</div>
-      </StyledWork>
-    </>
-  );
+  return <WorkLayout />;
 }
 
 export default Work;
