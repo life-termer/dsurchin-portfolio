@@ -17,6 +17,7 @@ const StyledHomeLayout = styled.div`
   width: 100%;
   left: 0;
   z-index: 99;
+  background-color: var(--backdrop-color);
   ${(props) =>
     props.$page === "/" &&
     css`

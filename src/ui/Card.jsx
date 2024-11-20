@@ -163,10 +163,10 @@ function Card({ type, link, disabled, children }) {
       data-glow={true}
       $active={link === pathname}
       onClick={() => {
-        if (link)
-          setTimeout(() => {
-            navigate(link);
-          }, 300);
+        if (link) navigate(link);
+          // setTimeout(() => {
+          //   navigate(link);
+          // }, 300);
       }}
     >
       {children}

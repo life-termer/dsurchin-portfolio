@@ -1,3 +1,4 @@
+import { Tooltip } from "react-tooltip";
 import styled from "styled-components";
 
 const StyledWorkCard = styled.div`
@@ -6,23 +7,42 @@ const StyledWorkCard = styled.div`
   height: 100%;
   overflow: hidden;
   z-index: 20;
+  &.has-link {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .react-tooltip {
+    font-size: 0.8rem;
+    /* backdrop-filter: blur(10px); */
+    background-color: var(--color-grey-800);
+    color: var(--color-grey-200);
+    /* opacity: 1; */
+  }
+  &:hover {
+    img {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(0.9);
+      box-shadow: 0px 2px 3px var(--backdrop-color-brand);
+      filter: grayscale(0);
+    }
+  }
+`;
+const ImageWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s linear;
     object-position: top;
-    transform: scale(1.05);
-    transform-origin: 50% 20%;
+    transform: rotateX(15deg) rotateY(-5deg) rotateZ(1deg) scale(0.86);
+    box-shadow: 5px 5px 2px var(--backdrop-color-brand);
+    transition: 2s;
+    transform-origin: 50% 10%;
+    will-change: transform;
     filter: grayscale(70%);
-    opacity: 0.75;
-  }
-  &:hover {
-    img {
-      filter: grayscale(0%);
-      transform: scale(1);
-      opacity: 1;
-    }
   }
 `;
 const Heading = styled.div`
@@ -41,18 +61,53 @@ const Heading = styled.div`
 `;
 const Tags = styled.div`
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+const Tag = styled.div`
+  border: 1px solid var(--color-brand);
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+  backdrop-filter: blur(10px);
+  background-color: var(--backdrop-color);
 `;
 
 function WorkCard({ project }) {
+  const { name, year, mainImage, tags, link } = project;
+
+  function handleClick() {
+    if(link) window.open(link, '_blank').focus();
+  }
+
+  
   return (
-    <StyledWorkCard>
-      <img src="/zavodo/zavodo-main.jpeg" alt="" />
+    <StyledWorkCard onClick={handleClick} className={link ? 'has-link' : ''}>
+      <ImageWrapper>
+        <img src={mainImage} alt="" />
+      </ImageWrapper>
       <Heading>
-        <h4>{project.name}</h4>
-        <h4>{project.year}</h4>
+        <h4>{name}</h4>
+        <h4>{year}</h4>
       </Heading>
+      <Tags>
+        {tags.map((tag) => {
+          const { icon: Icon, id, name } = tag;
+          const rId = id + Math.random();
+          return (
+            <Tag key={id}>
+              <Icon data-tooltip-id={rId} data-tooltip-content={name}/>
+              <Tooltip id={rId} />
+            </Tag>
+          );
+        })}
+      </Tags>
+      
     </StyledWorkCard>
   );
 }
