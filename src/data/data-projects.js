@@ -93,7 +93,7 @@ export const projects = [
   },
   {
     id: "007",
-    name: "Ekonomska poslovna cona Trnovlje",
+    name: "EPC Trnovlje",
     year: "2023",
     mainImage: "/epc/epc-main.jpg",
     images: [
@@ -218,7 +218,9 @@ export const projects = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    link: "https://life-termer.github.io/memphis/",
   },
+
   {
     id: "015",
     name: "Fast Pizza",
@@ -230,13 +232,7 @@ export const projects = [
       "/pizza/pizza-03.jpg",
       "/pizza/pizza-04.jpg",
     ],
-    tags: [
-      tags.at(0),
-      tags.at(1),
-      tags.at(4),
-      tags.at(6),
-      tags.at(7),
-    ],
+    tags: [tags.at(0), tags.at(1), tags.at(4), tags.at(6), tags.at(7)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     link: "https://react-demo-pizza-app.vercel.app/",
@@ -262,5 +258,6 @@ export const projects = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    link: "https://ds-hotel-management-app.vercel.app/",
   },
 ];

@@ -12,7 +12,7 @@ const StyledFiltersWrapper = styled.div`
   position: fixed;
   top: 20%;
   left: 0;
-  opacity: 0;
+  /* opacity: 0; */
 `;
 const StyledFilters = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ const StyledFilters = styled.div`
   width: 100%;
 `;
 
-function Filters({filters}) {
+function Filters({ filters }) {
   const tagsList = tags;
 
   const [searchParams, setSearchParams] = useSearchParams();

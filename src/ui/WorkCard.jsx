@@ -82,12 +82,11 @@ function WorkCard({ project }) {
   const { name, year, mainImage, tags, link } = project;
 
   function handleClick() {
-    if(link) window.open(link, '_blank').focus();
+    if (link) window.open(link, "_blank").focus();
   }
 
-  
   return (
-    <StyledWorkCard onClick={handleClick} className={link ? 'has-link' : ''}>
+    <StyledWorkCard onClick={handleClick} className={link ? "has-link" : ""}>
       <ImageWrapper>
         <img src={mainImage} alt="" />
       </ImageWrapper>
@@ -101,13 +100,12 @@ function WorkCard({ project }) {
           const rId = id + Math.random();
           return (
             <Tag key={id}>
-              <Icon data-tooltip-id={rId} data-tooltip-content={name}/>
+              <Icon data-tooltip-id={rId} data-tooltip-content={name} />
               <Tooltip id={rId} />
             </Tag>
           );
         })}
       </Tags>
-      
     </StyledWorkCard>
   );
 }

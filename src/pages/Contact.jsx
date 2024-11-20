@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Filters from "../ui/Filters";
 
 const StyledContact = styled.div`
-  height: 100vh;
+  min-height: 90vh;
 `;
 
 function Contact() {

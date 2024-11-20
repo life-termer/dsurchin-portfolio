@@ -50,6 +50,7 @@ const Main = styled.main`
 const ContainerWrapper = styled.div`
   position: relative;
   width: 100%;
+  min-height: 100%;
   height: auto;
   transition: all 1s ease;
   ${(props) =>
