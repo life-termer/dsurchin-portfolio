@@ -14,7 +14,7 @@ const StyledCard = styled.div`
   align-items: center;
   /* border: 2px solid var(--color-grey-300); */
   backdrop-filter: blur(3px) invert(3%);
-  transition: height 0.7s 0.3s ease-in-out, width 0.7s 0.3s ease-in-out;
+  transition: height 0.5s ease-in-out, width 0.5s linear;
   border: var(--border-size) solid var(--color-grey-400);
 
   &[data-glow] {
@@ -69,6 +69,8 @@ const StyledCard = styled.div`
       position: absolute;
       width: 50%;
       height: 50%;
+      flex-direction: column;
+      gap: 1rem;
       &:hover {
         h1,
         h2,
@@ -76,7 +78,8 @@ const StyledCard = styled.div`
         h4,
         h5,
         h6 {
-          text-shadow: var(--color-brand) 1px 0 3px;
+          cursor: pointer;
+          text-shadow: var(--color-brand) 1px 0 2px;
         }
       }
       &:nth-child(1) {
@@ -110,7 +113,9 @@ const StyledCard = styled.div`
         props.$active &&
         css`
           * {
-            opacity: 0.5;
+            /* color: var(--color-grey-900); */
+            color: var(--color-brand);
+            text-shadow: var(--color-brand) 1px 0 3px;
           }
           &:hover,
           &.active {
@@ -118,7 +123,23 @@ const StyledCard = styled.div`
           }
         `}
     `}
-
+  ${(props) =>
+    props.type === "home" &&
+    props.$page != "/" &&
+    css`
+      flex-direction: row;
+      
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        cursor: pointer;
+        color: var(--color-grey-800);
+        text-shadow: var(--color-brand) 1px 0 3px;
+      }
+    `}
   ${(props) =>
     props.type === "filter" &&
     css`
@@ -140,10 +161,15 @@ const StyledCard = styled.div`
       height: 100%;
     `}
   ${(props) =>
+    props.type === "contact" &&
+    css`
+      perspective: 1000px;
+    `}
+  ${(props) =>
     props.disabled &&
     css`
       * {
-        opacity: 0.5;
+        color: var(--color-grey-900);
       }
       &:hover,
       &.active {
@@ -155,18 +181,18 @@ const StyledCard = styled.div`
 function Card({ type, link, disabled, children }) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-
   return (
     <StyledCard
       type={type}
       disabled={disabled}
       data-glow={true}
+      $page={pathname}
       $active={link === pathname}
       onClick={() => {
         if (link) navigate(link);
-          // setTimeout(() => {
-          //   navigate(link);
-          // }, 300);
+        // setTimeout(() => {
+        //   navigate(link);
+        // }, 300);
       }}
     >
       {children}

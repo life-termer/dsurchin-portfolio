@@ -31,17 +31,25 @@ export const formatCurrency = (value) =>
 
 //Cursor position
 export const cursorOffSet = function (e) {
-  const rect = this.getBoundingClientRect();
+  const rect = document.documentElement.getBoundingClientRect();
   const x = e.clientX - rect.left;
   const y = e.clientY - rect.top;
-  const xp = (x / window.innerWidth).toFixed(2);
-  const yp = (y / window.innerHeight).toFixed(2);
-  this.style.setProperty("--x", x);
-  this.style.setProperty("--y", y);
-  this.style.setProperty("--xp", xp);
-  this.style.setProperty("--yp", yp);
+  // const xp = (x / window.innerWidth).toFixed(2);
+  // const yp = (y / window.innerHeight).toFixed(2);
+  document.documentElement.style.setProperty("--x", x);
+  // document.documentElement.style.setProperty("--xp", xp);
+  document.documentElement.style.setProperty("--y", y);
+  // document.documentElement.style.setProperty("--yp", yp);
+  // this.style.setProperty("--x", x);
+  // this.style.setProperty("--y", y);
+  // this.style.setProperty("--xp", xp);
+  // this.style.setProperty("--yp", yp);
 };
-
+// document.querySelector('body').addEventListener('mousemove', (e)=> {
+//   cursorOffSet(e);
+//   console.log('move')
+// })
+// document.addEventListener('mousemove', cursorOffSet);
 // Randomize array
 export const randomize = (arr) => {
   return arr

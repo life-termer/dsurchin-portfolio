@@ -211,7 +211,7 @@ h6 {
   font-style: normal;
   overflow-wrap: break-word;
   hyphens: auto;
-
+  transition: all 0.3s ease-out;
 }
 img {
   max-width: 100%;

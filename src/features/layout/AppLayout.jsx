@@ -10,6 +10,7 @@ import LayoutBackground from "../../ui/LayoutBackground";
 import DarkModeToggle from "../../ui/DarkModeToggle";
 import { useMouseMove } from "../../hooks/useMouseMove";
 import HomeLayout from "./HomeLayout";
+import { cursorOffSet } from "../../utils/helpers";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,7 +79,6 @@ function AppLayout() {
   const main = useRef();
 
   const [status] = useMouseMove();
-
   const { pathname } = useLocation();
 
   useEffect(() => {

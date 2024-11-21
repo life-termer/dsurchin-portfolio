@@ -17,7 +17,11 @@ const StyledHomeLayout = styled.div`
   width: 100%;
   left: 0;
   z-index: 99;
-  background-color: var(--backdrop-color);
+  ${(props) =>
+    props.$page != "/" &&
+    css`
+      background-color: var(--backdrop-color);
+    `}
   ${(props) =>
     props.$page === "/" &&
     css`
@@ -81,6 +85,14 @@ const StyledHomeLayout = styled.div`
       }
     `}
 `;
+const Circle = styled.span`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-color: var(--color-grey-700);
+`
 
 function HomeLayout() {
   const { pathname } = useLocation();
@@ -97,7 +109,19 @@ function HomeLayout() {
         <AnimatedHeading heading="Contact" id="heading03" as="h2" delay={0.4} />
       </Card>
       <Card type="home" disabled={true}>
-        <AnimatedHeading heading="Some" id="heading04" as="h2" delay={0.4} />
+        <AnimatedHeading
+          heading="Dmitry Surchin"
+          id="heading04"
+          as="h2"
+          delay={0.4}
+        />
+        <Circle />
+        <AnimatedHeading
+          heading="Web Developer"
+          id="heading05"
+          as="h3"
+          delay={0.4}
+        />
       </Card>
     </StyledHomeLayout>
   );

@@ -1,32 +1,7 @@
-import styled from "styled-components";
-import Filters from "../ui/Filters";
-
-const StyledContact = styled.div`
-  min-height: 90vh;
-`;
+import ContactLayout from "../features/layout/ContactLayout";
 
 function Contact() {
-  return (
-    <>
-      <StyledContact>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-        <div>Contact</div>
-      </StyledContact>
-    </>
-  );
+  return <ContactLayout />;
 }
 
 export default Contact;
