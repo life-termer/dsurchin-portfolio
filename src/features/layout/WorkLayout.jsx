@@ -47,7 +47,7 @@ function WorkLayout() {
   // 2. Sort
   let sortedProjects = filteredProjects;
   let field = "";
-  const sortByName = searchParams.get("sortByName");
+  const sortByName = searchParams.get("sortByName") || "asc";
   const sortByYear = searchParams.get("sortByYear");
   if (sortByName) {
     field = "name";

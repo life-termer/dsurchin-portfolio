@@ -46,9 +46,9 @@ function FilterSort() {
     setSearchParams(searchParams);
   }
   function handleSortByNameClick() {
-    if (currentFilterName === "dsc" || !currentFilterName)
-      searchParams.set("sortByName", "asc");
-    else searchParams.set("sortByName", "dsc");
+    if (currentFilterName === "asc" || !currentFilterName)
+      searchParams.set("sortByName", "dsc");
+    else searchParams.set("sortByName", "asc");
     setSearchParams(searchParams);
   }
 

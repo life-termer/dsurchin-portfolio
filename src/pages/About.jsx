@@ -1,31 +1,7 @@
-import styled from "styled-components";
-
-const StyledAbout = styled.div`
-  height: 100vh;
-`;
+import AboutLayout from "../features/layout/AboutLayout";
 
 function About() {
-  return (
-    <>
-      <StyledAbout>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-        <div>About</div>
-      </StyledAbout>
-    </>
-  );
+  return <AboutLayout />;
 }
 
 export default About;
