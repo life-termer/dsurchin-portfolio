@@ -1,10 +1,9 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Container from "../../ui/Container";
 import Card from "../../ui/Card";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useEffect, useRef } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useRef } from "react";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 import { IoMailOutline } from "react-icons/io5";
 
@@ -19,12 +18,14 @@ const GridWrapper = styled.div`
   justify-content: center;
   width: 100%;
   grid-template-columns: repeat(3, 300px);
-  gap: 3rem;
+  gap: 2.5rem;
 `;
 const GridItem = styled.div`
   min-height: 250px;
   min-width: 250px;
-  /* opacity: 0; */
+  opacity: 0;
+  position: relative;
+  top: 20px;
   width: 100%;
   height: 100%;
   perspective: 1000px;
@@ -49,23 +50,20 @@ const GridItem = styled.div`
     }
   }
   svg {
-    
   }
   &:nth-child(1) {
     svg {
-      color: #0a66c2
+      color: #0a66c2;
     }
   }
   &:nth-child(2) {
-    
     svg {
-      color: #00405d
+      color: #00405d;
     }
   }
   &:nth-child(3) {
-    
     svg {
-      color: #ea4335
+      color: #ea4335;
     }
   }
   &:nth-child(4) {
@@ -77,30 +75,62 @@ const GridItem = styled.div`
 `;
 
 function ContactLayout() {
-  const [searchParams] = useSearchParams();
   const scope = useRef();
-  const filters = useRef();
-  let tl = new gsap.timeline();
 
   function handleClick(link) {
     if (link) window.open(link, "_blank").focus();
   }
 
+  let contactTimeline = new gsap.timeline();
+  useGSAP(
+    () => {
+      contactTimeline.to(".item", {
+        opacity: 1,
+        top: 0,
+        delay: 0.25,
+        duration: 0.5,
+        stagger: 0.25,
+        ease: "power1.out",
+      });
+    },
+    { scope: scope }
+  );
+
   return (
     <Container>
       <StyledContactLayout ref={scope}>
         <GridWrapper>
-          <GridItem onClick={()=> handleClick('https://www.linkedin.com/in/dsurchin/')}>
-            <Card type="contact"><FaLinkedin /></Card>
+          <GridItem
+            className="item"
+            onClick={() => handleClick("https://www.linkedin.com/in/dsurchin/")}
+          >
+            <Card type="contact">
+              <FaLinkedin />
+            </Card>
           </GridItem>
-          <GridItem onClick={()=> handleClick('https://github.com/life-termer')}>
-            <Card type="contact"><FaGithub /></Card>
+          <GridItem
+            className="item"
+            onClick={() => handleClick("https://github.com/life-termer")}
+          >
+            <Card type="contact">
+              <FaGithub />
+            </Card>
           </GridItem>
-          <GridItem onClick={()=> handleClick('mailto:dsurchin@gmail.com')}>
-            <Card type="contact"><IoMailOutline /></Card>
+          <GridItem
+            className="item"
+            onClick={() => handleClick("mailto:dsurchin@gmail.com")}
+          >
+            <Card type="contact">
+              <IoMailOutline />
+            </Card>
           </GridItem>
-          <GridItem onClick={()=> handleClick('https://wa.me/38651896611')}>
-            <Card type="contact"><FaWhatsapp /></Card>
+          <GridItem
+            className="item"
+            onClick={() => handleClick("https://wa.me/38651896611")}
+          >
+            <Card type="contact">
+              <FaWhatsapp />
+            </Card>
           </GridItem>
         </GridWrapper>
       </StyledContactLayout>

@@ -28,21 +28,29 @@ const StyledHeading = styled.h1`
     css`
       font-size: 2rem;
     `}
+  ${(props) =>
+    props.as === "span" &&
+    css`
+      font-size: 1.5rem !important;
+      text-shadow: var(--color-brand) 1px 0 1px;
+    `}
   line-height: 1.4;
   font-weight: 200;
   span {
     opacity: 0;
   }
-  ${(props) => props.$page != "/" && css`
+  ${(props) =>
+    props.$page != "/" &&
+    css`
       font-size: 80%;
-  `}
+    `}
 `;
 
 function AnimatedHeading({ heading, id, delay = 0, as }) {
   const { pathname } = useLocation();
   const ref = useRef();
-  const duration = 0.4;
-  const stagger = 0.1;
+  const duration = as === "span" ? 0.2 : 0.4;
+  const stagger = as === "span" ? 0.05 : 0.1;
   const chars = heading.split("");
   const ease = "power1.out";
 

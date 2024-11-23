@@ -1,23 +1,20 @@
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Tooltip } from "react-tooltip";
 import styled from "styled-components";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 
 const StyledWorkCard = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: 20;
-  &.has-link {
-    &:hover {
-      cursor: pointer;
-    }
-  }
   .react-tooltip {
     font-size: 0.8rem;
-    /* backdrop-filter: blur(10px); */
     background-color: var(--color-grey-800);
     color: var(--color-grey-200);
-    /* opacity: 1; */
   }
   &:hover {
     img {
@@ -31,6 +28,7 @@ const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
   perspective: 1000px;
+
   img {
     width: 100%;
     height: 100%;
@@ -77,18 +75,50 @@ const Tag = styled.div`
   backdrop-filter: blur(10px);
   background-color: var(--backdrop-color);
 `;
+const GitHubBtn = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  &:hover {
+    cursor: pointer;
+  }
+`;
+const LinkBtn = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 function WorkCard({ project }) {
-  const { name, year, mainImage, tags, link } = project;
-
-  function handleClick() {
-    if (link) window.open(link, "_blank").focus();
+  const { name, year, mainImage, tags, link, id, github } = project;
+  const gitId = id + Math.random();
+  const img = mainImage.split(".");
+  const placeholderImg = `${img.at(0)}-sm.${img.at(1)}`;
+  console.log(placeholderImg);
+  function handleClick(link) {
+    window.open(link, "_blank").focus();
   }
 
   return (
-    <StyledWorkCard onClick={handleClick} className={link ? "has-link" : ""}>
+    <StyledWorkCard className={link ? "has-link" : ""}>
       <ImageWrapper>
-        <img src={mainImage} alt="" />
+        <LazyLoadImage
+          src={mainImage}
+          width={400}
+          height={500}
+          // placeholderSrc={placeholderImg}
+          alt={mainImage}
+          effect="opacity"
+          wrapperProps={{
+            // If you need to, you can tweak the effect transition using the wrapper style.
+            style: { transitionDelay: "0.25s", transitionDuration: "1s" },
+          }}
+        />
       </ImageWrapper>
       <Heading>
         <h4>{name}</h4>
@@ -106,6 +136,25 @@ function WorkCard({ project }) {
           );
         })}
       </Tags>
+      {github ? (
+        <GitHubBtn onClick={() => handleClick(github)}>
+          <Tag>
+            <FaGithub data-tooltip-id={gitId} data-tooltip-content="GitHub" />
+            <Tooltip id={gitId} />
+          </Tag>
+        </GitHubBtn>
+      ) : (
+        ""
+      )}
+      {link ? (
+        <LinkBtn onClick={() => handleClick(link)}>
+          <Tag>
+            <FiExternalLink />
+          </Tag>
+        </LinkBtn>
+      ) : (
+        ""
+      )}
     </StyledWorkCard>
   );
 }

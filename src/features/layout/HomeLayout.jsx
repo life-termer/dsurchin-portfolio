@@ -3,6 +3,9 @@ import Card from "../../ui/Card";
 import AnimatedHeading from "../../ui/AnimatedHeading";
 import { useLocation } from "react-router-dom";
 import { RxDividerHorizontal } from "react-icons/rx";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const grow = "60%";
 const shrink = "40%";
@@ -94,6 +97,7 @@ const Divider = styled.span`
   align-items: center;
   flex-grow: 0;
   flex-shrink: 0;
+  opacity: 0;
   svg {
     width: 100%;
     height: auto;
@@ -111,9 +115,23 @@ const Divider = styled.span`
 
 function HomeLayout() {
   const { pathname } = useLocation();
+  const scope = useRef();
+  const item = useRef();
+
+  useGSAP(
+    () => {
+      gsap.to(item.current, {
+        opacity: 1,
+        delay: 1.5,
+        duration: 0.3,
+        ease: "power1.out",
+      });
+    },
+    { scope: scope }
+  );
 
   return (
-    <StyledHomeLayout $page={pathname}>
+    <StyledHomeLayout $page={pathname} ref={scope}>
       <Card type="home" link="/work">
         <AnimatedHeading heading="Work" id="heading01" as="h2" delay={0.4} />
       </Card>
@@ -130,7 +148,7 @@ function HomeLayout() {
           as="h2"
           delay={0.4}
         />
-        <Divider $page={pathname}>
+        <Divider $page={pathname} ref={item}>
           <RxDividerHorizontal />
         </Divider>
         <AnimatedHeading

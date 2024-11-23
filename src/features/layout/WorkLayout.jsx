@@ -27,14 +27,13 @@ const GridItem = styled.div`
   position: relative;
   min-height: 500px;
   opacity: 0;
-  display: none;
   top: 20px;
 `;
 
 function WorkLayout() {
   const [searchParams] = useSearchParams();
   const scope = useRef();
- 
+
   let workTimeline = new gsap.timeline();
 
   //1. Filter
@@ -74,18 +73,13 @@ function WorkLayout() {
 
   useGSAP(
     () => {
-      workTimeline
-      .to(".item",{display: 'block',})
-      .to(
-        ".item",
-        {
-          opacity: 1,
-          top: 0,
-          duration: 0.5,
-          stagger: 0.2,
-          ease: "power1.out",
-        }
-      );
+      workTimeline.to(".item", {
+        opacity: 1,
+        top: 0,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: "power1.out",
+      });
     },
     { dependencies: [searchParams], scope: scope, revertOnUpdate: true }
   );

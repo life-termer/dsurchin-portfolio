@@ -219,6 +219,7 @@ export const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     link: "https://life-termer.github.io/memphis/",
+    github: "https://github.com/life-termer/memphis",
   },
 
   {
@@ -236,6 +237,7 @@ export const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     link: "https://react-demo-pizza-app.vercel.app/",
+    github: "https://github.com/life-termer/react-demo-pizza-app",
   },
   {
     id: "016",
@@ -259,5 +261,22 @@ export const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     link: "https://ds-hotel-management-app.vercel.app/",
+    github: "https://github.com/life-termer/hotel-management-app.git",
+  },
+  {
+    id: "017",
+    name: "Personal Portfolio",
+    year: "2024",
+    mainImage: "/pp/pp-main.jpg",
+    images: [
+      "/pp/pp-01.jpg",
+      "/pp/pp-02.jpg",
+      "/pp/pp-03.jpg",
+      "/pp/pp-04.jpg",
+    ],
+    tags: [tags.at(0), tags.at(1), tags.at(5), tags.at(6), tags.at(8)],
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    github: "https://github.com/life-termer/dsurchin-portfolio",
   },
 ];
