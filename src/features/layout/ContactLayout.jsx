@@ -19,6 +19,19 @@ const GridWrapper = styled.div`
   width: 100%;
   grid-template-columns: repeat(3, 300px);
   gap: 2.5rem;
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 250px);
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 220px);
+  }
+  @media (max-width: 500px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    grid-template-columns: none;
+    gap: 2rem;
+  }
 `;
 const GridItem = styled.div`
   min-height: 250px;
@@ -29,6 +42,14 @@ const GridItem = styled.div`
   width: 100%;
   height: 100%;
   perspective: 1000px;
+  @media (max-width: 1200px) {
+    min-height: 200px;
+    min-width: 200px;
+  }
+  @media (max-width: 500px) {
+    height: 150px;
+    width: 150px;
+  }
   svg {
     width: 100%;
     height: auto;

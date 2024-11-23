@@ -26,6 +26,13 @@ const GridWrapper = styled.div`
   width: 100%;
   grid-template-columns: 300px auto;
   gap: 3rem;
+  @media (max-width: 1200px) {
+    grid-template-columns: 200px auto;
+    gap: 2rem;
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 `;
 const GridItem = styled.div`
   position: relative;
@@ -33,7 +40,21 @@ const GridItem = styled.div`
   min-width: 250px;
   width: 100%;
   height: auto;
-
+  @media (max-width: 1200px) {
+    min-height: 150px;
+    min-width: 150px;
+  }
+  @media (max-width: 900px) {
+    &:first-child {
+      height: 200px;
+      width: 200px;
+      order: 2;
+      margin: auto;
+    }
+    &:last-child {
+      order: 1;
+    }
+  }
   ${(props) =>
     props.type === "icon" &&
     css`
@@ -66,6 +87,9 @@ const GridItem = styled.div`
 `;
 const P = styled.p`
   font-size: 95%;
+  @media (max-width: 500px) {
+    font-size: 90%;
+  }
   &.item {
     opacity: 0;
   }

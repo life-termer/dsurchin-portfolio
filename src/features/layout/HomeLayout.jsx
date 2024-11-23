@@ -6,6 +6,7 @@ import { RxDividerHorizontal } from "react-icons/rx";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { breakpointDown } from "../../styles/GlobalStyles";
 
 const grow = "60%";
 const shrink = "40%";
@@ -13,8 +14,8 @@ const shrink = "40%";
 const StyledHomeLayout = styled.div`
   position: fixed;
   display: flex;
-  align-content: center;
-  justify-items: center;
+  align-items: center;
+  justify-content: center;
   transition: all 1s ease;
   height: 100px;
   top: 28px;
@@ -26,6 +27,16 @@ const StyledHomeLayout = styled.div`
     props.$page != "/" &&
     css`
       background-color: var(--backdrop-color);
+      @media (max-width: 760px) {
+        div {
+          &:last-child {
+            ${Divider},
+            h3 {
+              display: none;
+            }
+          }
+        }
+      }
     `}
   ${(props) =>
     props.$page === "/" &&
@@ -34,58 +45,95 @@ const StyledHomeLayout = styled.div`
       top: 50px;
       width: calc(100% - 10vw);
       height: 90vh;
+      @media (max-width: 900px) {
+        position: static;
+        justify-content: flex-start;
+        height: auto;
+        flex-wrap: wrap;
+        top: 28px;
+      }
+      @media (max-width: 500px) {
+        width: 100%;
+      }
       div {
-        &:hover {
-          width: ${grow};
-          height: ${grow};
+        &:last-child {
+          display: flex;
+          flex-direction: column;
+        }
+        @media (max-width: 900px) {
+          position: relative;
+          width: 100%;
+          height: calc(25vh - 14px);
+          min-height: 200px;
+          &:nth-child(1) {
+            order: 2;
+          }
+          &:nth-child(2) {
+            order: 3;
+          }
+          &:nth-child(3) {
+            order: 4;
+          }
+          &:last-child {
+            min-height: 300px;
+            order: 1;
+          }
+        }
+        @media (min-width: 900px) {
+          &:hover {
+            width: ${grow};
+            height: ${grow};
+          }
         }
       }
-      &:has(div:nth-child(1):hover) {
-        div:nth-child(2) {
-          width: ${shrink};
+      @media (min-width: 900px) {
+        &:has(div:nth-child(1):hover) {
+          div:nth-child(2) {
+            width: ${shrink};
+          }
+          div:nth-child(3) {
+            width: ${grow};
+            height: ${shrink};
+          }
+          div:nth-child(4) {
+            width: ${shrink};
+          }
         }
-        div:nth-child(3) {
-          width: ${grow};
-          height: ${shrink};
+        &:has(div:nth-child(2):hover) {
+          div:nth-child(1) {
+            width: ${shrink};
+          }
+          div:nth-child(3) {
+            width: ${shrink};
+          }
+          div:nth-child(4) {
+            width: ${grow};
+            height: ${shrink};
+          }
         }
-        div:nth-child(4) {
-          width: ${shrink};
+        &:has(div:nth-child(3):hover) {
+          div:nth-child(1) {
+            width: ${grow};
+            height: ${shrink};
+          }
+          div:nth-child(2) {
+            width: ${shrink};
+          }
+          div:nth-child(4) {
+            width: ${shrink};
+          }
         }
-      }
-      &:has(div:nth-child(2):hover) {
-        div:nth-child(1) {
-          width: ${shrink};
-        }
-        div:nth-child(3) {
-          width: ${shrink};
-        }
-        div:nth-child(4) {
-          width: ${grow};
-          height: ${shrink};
-        }
-      }
-      &:has(div:nth-child(3):hover) {
-        div:nth-child(1) {
-          width: ${grow};
-          height: ${shrink};
-        }
-        div:nth-child(2) {
-          width: ${shrink};
-        }
-        div:nth-child(4) {
-          width: ${shrink};
-        }
-      }
-      &:has(div:nth-child(4):hover) {
-        div:nth-child(1) {
-          width: ${shrink};
-        }
-        div:nth-child(2) {
-          width: ${grow};
-          height: ${shrink};
-        }
-        div:nth-child(3) {
-          width: ${shrink};
+        &:has(div:nth-child(4):hover) {
+          div:nth-child(1) {
+            width: ${shrink};
+          }
+          div:nth-child(2) {
+            width: ${grow};
+            height: ${shrink};
+          }
+          div:nth-child(3) {
+            width: ${shrink};
+          }
         }
       }
     `}
@@ -107,6 +155,18 @@ const Divider = styled.span`
     props.$page != "/" &&
     css`
       width: 30px;
+      ${breakpointDown(
+        css`
+          width: 20px;
+        `,
+        "900px"
+      )};
+      ${breakpointDown(
+        css`
+          width: 10px;
+        `,
+        "400px"
+      )};
       svg {
         transform: rotate(90deg);
       }

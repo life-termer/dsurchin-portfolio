@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import styled, { css } from "styled-components";
 import { useLocation } from "react-router-dom";
+import { breakpointDown } from "../styles/GlobalStyles";
 
 const StyledHeading = styled.h1`
   text-shadow: var(--color-brand) 1px 0 6px;
@@ -12,16 +13,43 @@ const StyledHeading = styled.h1`
     props.as === "h1" &&
     css`
       font-size: 4.5rem;
+      text-align: center;
     `}
   ${(props) =>
     props.as === "h2" &&
     css`
       font-size: 4rem;
+      text-align: center;
+      ${breakpointDown(
+        css`
+          font-size: 3rem;
+        `,
+        "900px"
+      )};
+      ${breakpointDown(
+        css`
+          font-size: 2.5rem;
+        `,
+        "500px"
+      )};
     `}
   ${(props) =>
     props.as === "h3" &&
     css`
       font-size: 3rem;
+      text-align: center;
+      ${breakpointDown(
+        css`
+          font-size: 2.5rem;
+        `,
+        "900px"
+      )};
+      ${breakpointDown(
+        css`
+          font-size: 2rem;
+        `,
+        "500px"
+      )};
     `}
   ${(props) =>
     props.as === "h4" &&
@@ -43,6 +71,12 @@ const StyledHeading = styled.h1`
     props.$page != "/" &&
     css`
       font-size: 80%;
+      @media (max-width: 900px) {
+        font-size: 70%;
+      }
+      @media (max-width: 500px) {
+        font-size: 60%;
+      }
     `}
 `;
 

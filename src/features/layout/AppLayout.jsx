@@ -11,6 +11,7 @@ import DarkModeToggle from "../../ui/DarkModeToggle";
 import { useMouseMove } from "../../hooks/useMouseMove";
 import HomeLayout from "./HomeLayout";
 import { cursorOffSet } from "../../utils/helpers";
+import { breakpointDown, breakpointUp } from "../../styles/GlobalStyles";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,27 +21,29 @@ const StyledAppLayout = styled.div`
   position: relative;
   background-color: var(--color-grey-400);
   z-index: 0;
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    opacity: 0.5;
-    will-change: background, opacity;
-    transition-duration: 400ms;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-    transition-property: opacity;
-    background-image: radial-gradient(
-      700px at calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px),
-      var(--color-brand-yellow-50),
-      transparent 40%
-    );
-    background-size: auto;
-    background-origin: padding-box;
-    z-index: -1;
+  @media (min-width: 900px) {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      opacity: 0.5;
+      will-change: background, opacity;
+      transition-duration: 400ms;
+      transition-timing-function: ease;
+      transition-delay: 0s;
+      transition-property: opacity;
+      background-image: radial-gradient(
+        700px at calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px),
+        var(--color-brand-yellow-50),
+        transparent 40%
+      );
+      background-size: auto;
+      background-origin: padding-box;
+      z-index: -1;
+    }
   }
 `;
 const Main = styled.main`
@@ -57,7 +60,9 @@ const ContainerWrapper = styled.div`
   ${(props) =>
     props.$page === "/" &&
     css`
-      height: 100%;
+      @media (min-width: 900px) {
+        height: 100%;
+      }
     `}
 `;
 const Container = styled.div`
@@ -70,6 +75,24 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 900px) {
+    height: auto;
+    padding: 9rem 0.75rem 3rem 0.75rem;
+  }
+  @media (max-width: 500px) {
+    height: auto;
+    padding: 8rem 0.5rem 1rem 0.5rem;
+  }
+  ${(props) =>
+    props.$page === "/" &&
+    css`
+      @media (max-width: 900px) {
+        padding-top: 3rem;
+      }
+      @media (max-width: 500px) {
+        padding-top: 1rem;
+      }
+    `}
 `;
 
 function AppLayout() {
@@ -113,7 +136,7 @@ function AppLayout() {
       <Main ref={main}>
         <ContainerWrapper $page={pathname}>
           <LayoutBackground background={background} />
-          <Container ref={container}>
+          <Container ref={container} $page={pathname}>
             <HomeLayout />
             <Outlet />
           </Container>

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 :root {
@@ -222,3 +222,14 @@ img {
 `;
 
 export default GlobalStyles;
+
+export const breakpointDown = (inner, size) => css`
+  @media (max-width: ${size}) {
+    ${inner};
+  }
+`;
+export const breakpointUp = (inner, size) => css`
+  @media (min-width: ${size}) {
+    ${inner};
+  }
+`;

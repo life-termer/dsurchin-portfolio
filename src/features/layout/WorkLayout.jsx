@@ -28,6 +28,7 @@ const GridItem = styled.div`
   min-height: 500px;
   opacity: 0;
   top: 20px;
+  visibility: hidden;
 `;
 
 function WorkLayout() {
@@ -73,13 +74,17 @@ function WorkLayout() {
 
   useGSAP(
     () => {
-      workTimeline.to(".item", {
-        opacity: 1,
-        top: 0,
-        duration: 0.5,
-        stagger: 0.2,
-        ease: "power1.out",
-      });
+      workTimeline
+        .to(".item", {
+          visibility: "visible",
+        })
+        .to(".item", {
+          opacity: 1,
+          top: 0,
+          duration: 0.5,
+          stagger: 0.2,
+          ease: "power1.out",
+        });
     },
     { dependencies: [searchParams], scope: scope, revertOnUpdate: true }
   );
