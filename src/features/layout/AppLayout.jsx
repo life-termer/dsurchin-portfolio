@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const StyledAppLayout = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   background-color: var(--color-grey-400);
   z-index: 0;
