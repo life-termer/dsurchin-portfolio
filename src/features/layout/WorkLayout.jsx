@@ -7,7 +7,7 @@ import WorkCard from "../../ui/WorkCard";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 
 // gsap.registerPlugin(ScrollTrigger);
@@ -24,15 +24,18 @@ const GridWrapper = styled.div`
   gap: 4rem;
 `;
 const GridItem = styled.div`
+  position: relative;
   min-height: 500px;
-  /* opacity: 0; */
+  opacity: 0;
+  display: none;
+  top: 20px;
 `;
 
 function WorkLayout() {
   const [searchParams] = useSearchParams();
   const scope = useRef();
-  const filters = useRef();
-  let tl = new gsap.timeline();
+ 
+  let workTimeline = new gsap.timeline();
 
   //1. Filter
   const filterValue = searchParams.get("filter");
@@ -69,37 +72,33 @@ function WorkLayout() {
     );
   }
 
-  // useGSAP(
-  //   () => {
-  //     tl.to(filters.current, {
-  //       opacity: 1,
-  //       delay: 1.5,
-  //       duration: 0.5,
-  //       stagger: 0.15,
-  //       ease: "power1.out",
-  //     }).to(
-  //       ".item",
-  //       {
-  //         opacity: 1,
-  //         duration: 0.5,
-  //         stagger: 0.2,
-  //         ease: "power1.out",
-  //       },
-  //       "-=0.5"
-  //     );
-  //   },
-  //   { scope: scope }
-  // );
+  useGSAP(
+    () => {
+      workTimeline
+      .to(".item",{display: 'block',})
+      .to(
+        ".item",
+        {
+          opacity: 1,
+          top: 0,
+          duration: 0.5,
+          stagger: 0.2,
+          ease: "power1.out",
+        }
+      );
+    },
+    { dependencies: [searchParams], scope: scope, revertOnUpdate: true }
+  );
   // useEffect(() => {
-  //   tl.reverse();
-
-  //   tl.play();
+  //   console.log(workTimeline)
+  //   // workTimeline.play();
   //   console.log("play");
-  // }, [filterValue, tl]);
+  // }, [sortedProjects, workTimeline]);
+
   return (
     <Container>
       <StyledWorkLayout ref={scope}>
-        <Filters filters={filters} />
+        <Filters />
         <GridWrapper>
           {sortedProjects.map((project) => {
             return (

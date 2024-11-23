@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import Card from "../../ui/Card";
 import AnimatedHeading from "../../ui/AnimatedHeading";
 import { useLocation } from "react-router-dom";
+import { RxDividerHorizontal } from "react-icons/rx";
 
 const grow = "60%";
 const shrink = "40%";
@@ -17,6 +18,7 @@ const StyledHomeLayout = styled.div`
   width: 100%;
   left: 0;
   z-index: 99;
+  transition: all 0.3s linear;
   ${(props) =>
     props.$page != "/" &&
     css`
@@ -85,14 +87,27 @@ const StyledHomeLayout = styled.div`
       }
     `}
 `;
-const Circle = styled.span`
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+const Divider = styled.span`
+  width: 50px;
+  height: 20px;
+  display: flex;
+  align-items: center;
   flex-grow: 0;
   flex-shrink: 0;
-  background-color: var(--color-grey-700);
-`
+  svg {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s linear;
+  }
+  ${(props) =>
+    props.$page != "/" &&
+    css`
+      width: 30px;
+      svg {
+        transform: rotate(90deg);
+      }
+    `}
+`;
 
 function HomeLayout() {
   const { pathname } = useLocation();
@@ -115,7 +130,9 @@ function HomeLayout() {
           as="h2"
           delay={0.4}
         />
-        <Circle />
+        <Divider $page={pathname}>
+          <RxDividerHorizontal />
+        </Divider>
         <AnimatedHeading
           heading="Web Developer"
           id="heading05"

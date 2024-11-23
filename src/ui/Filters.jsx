@@ -4,21 +4,22 @@ import { tags } from "../data/data-tags";
 import { useSearchParams } from "react-router-dom";
 import Card from "./Card";
 import FilterSort from "./FilterSort";
-import { useState } from "react";
-import { FaFilter } from "react-icons/fa6";
-import { MdFilterAlt } from "react-icons/md";
-import { FiFilter } from "react-icons/fi";
+import { useRef, useState } from "react";
 import { LuFilter, LuFilterX } from "react-icons/lu";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { AiOutlineClose } from "react-icons/ai";
 
 const StyledFiltersWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   position: fixed;
-  top: 20%;
+  top: 200px;
   left: 0;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
+  opacity: 0;
   ${(props) =>
     props.$active &&
     css`
@@ -51,10 +52,16 @@ const FiltersButton = styled.div`
     css`
       transform: translate(50%, -50%);
     `}
+  ${(props) =>
+    props.type === "clear" &&
+    css`
+      top: 46px;
+    `}
 `;
 
-function Filters({ filters }) {
+function Filters() {
   const tagsList = tags;
+  const filters = useRef();
   const [active, setActive] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
   const currentFilter = searchParams.get("filter");
@@ -62,6 +69,36 @@ function Filters({ filters }) {
     searchParams.set("filter", value);
     setSearchParams(searchParams);
   }
+  function handleClearFilters() {
+    if (searchParams.has("filter")) {
+      searchParams.delete("filter");
+      setSearchParams(searchParams);
+    }
+    if (searchParams.has("sortByName")) {
+      searchParams.delete("sortByName");
+      setSearchParams(searchParams);
+    }
+    if (searchParams.has("sortByYear")) {
+      searchParams.delete("sortByYear");
+      setSearchParams(searchParams);
+    }
+  }
+  let filtersTimeline = new gsap.timeline();
+  useGSAP(
+    () => {
+      filtersTimeline
+        .to(filters.current, { display: "flex" })
+        .to(filters.current, {
+          opacity: 1,
+          top: 188,
+          delay: 1.5,
+          duration: 0.5,
+          ease: "power1.out",
+        });
+    },
+    { scope: filters }
+  );
+
   return (
     <StyledFiltersWrapper ref={filters} $active={active}>
       <Card type="filter">
@@ -84,9 +121,24 @@ function Filters({ filters }) {
           })}
         </StyledFilters>
       </Card>
-      <FiltersButton $active={active} onClick={() => setActive((a) => !a)}>
-        {active ? <LuFilterX /> : <LuFilter />}
+      <FiltersButton
+        type="close"
+        $active={active}
+        onClick={() => setActive((a) => !a)}
+      >
+        {active ? <AiOutlineClose /> : <LuFilter />}
       </FiltersButton>
+      {searchParams.size ? (
+        <FiltersButton
+          type="clear"
+          $active={active}
+          onClick={handleClearFilters}
+        >
+          <LuFilterX />
+        </FiltersButton>
+      ) : (
+        ""
+      )}
     </StyledFiltersWrapper>
   );
 }

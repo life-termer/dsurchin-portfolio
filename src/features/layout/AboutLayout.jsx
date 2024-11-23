@@ -3,10 +3,9 @@ import Container from "../../ui/Container";
 import Card from "../../ui/Card";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useSearchParams } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
-import { IoMailOutline } from "react-icons/io5";
+import { FaLinkedin } from "react-icons/fa6";
 
 const StyledContactLayout = styled.div`
   display: flex;
@@ -92,6 +91,26 @@ function AboutLayout() {
             <Card type="contact">
               <FaLinkedin />
             </Card>
+          </GridItem>
+          <GridItem>
+            <p>
+              Frontend-focused developer with experience in full-stack
+              development, based in Ljubljana, Slovenia. With proficiency in
+              React and JavaScript and modern front-end tools, I aim to
+              provide an exceptional user experience on every project. I love
+              turning complex ideas into simple, elegant digital interfaces,
+              Currently working remotely, I collaborate with clients to deliver
+              scalable, user-centric digital solutions.
+            </p>
+            <p>
+              I&apos;m driven by a constant desire to learn and improve my skills,
+              always exploring new development tools and techniques to stay at
+              the forefront of web technology. I&apos;m eager to take on large-scale
+              React projects and tackle complex challenges, while ensuring
+              performance, accessibility, and an excellent user experience. My
+              goal is to continue growing as a developer, pushing the boundaries
+              of what&apos;s possible in the world of web development.
+            </p>
           </GridItem>
         </GridWrapper>
       </StyledContactLayout>
