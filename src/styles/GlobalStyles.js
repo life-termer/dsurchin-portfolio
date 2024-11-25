@@ -139,8 +139,7 @@ body {
   line-height: 1.4;
   font-size: 1.6rem;
 }
-@media (hover: hover) {
-  /* when hover is supported */
+@media (max-width: 1200px) {
   /* width */
   ::-webkit-scrollbar {
     width: 10px;
