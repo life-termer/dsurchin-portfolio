@@ -27,8 +27,13 @@ const StyledWorkCard = styled.div`
 const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
-  perspective: 1000px;
-
+  /* perspective: 1000px; */
+  .lazy-load-image-background {
+    display: block;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+  }
   img {
     width: 100%;
     height: 100%;
