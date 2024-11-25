@@ -65,6 +65,7 @@ const StyledCard = styled.div`
       flex-direction: column;
       gap: 1rem;
       padding: 0 10px;
+      cursor: pointer;
       &:hover {
         h1,
         h2,
@@ -72,7 +73,6 @@ const StyledCard = styled.div`
         h4,
         h5,
         h6 {
-          cursor: pointer;
           text-shadow: var(--color-brand) 1px 0 2px;
         }
       }
@@ -138,7 +138,6 @@ const StyledCard = styled.div`
       h4,
       h5,
       h6 {
-        cursor: pointer;
         color: var(--color-grey-800);
         text-shadow: var(--color-brand) 1px 0 3px;
       }
@@ -200,7 +199,7 @@ const StyledCard = styled.div`
       }
       &:hover,
       &.active {
-        cursor: auto;
+        cursor: auto !important;
       }
     `}
 `;
