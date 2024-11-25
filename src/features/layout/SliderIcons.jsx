@@ -72,11 +72,19 @@ function SliderIcons({ slides, reverse }) {
       <Swiper
         modules={[Autoplay]}
         spaceBetween={5}
-        slidesPerView={14}
+        slidesPerView={7}
         speed={5000}
         loop={true}
         allowTouchMove={false}
         autoplay={{ delay: 0, reverseDirection: reverse }}
+        breakpoints={{
+          500: {
+            slidesPerView: 10,
+          },
+          900: {
+            slidesPerView: 14,
+          },
+        }}
       >
         {randomSlides.map((icon, index) => {
           const { icon: Icon, name } = icon;

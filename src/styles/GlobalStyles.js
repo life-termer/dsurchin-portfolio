@@ -139,6 +139,8 @@ body {
   line-height: 1.4;
   font-size: 1.6rem;
 }
+@media (hover: hover) {
+  /* when hover is supported */
   /* width */
   ::-webkit-scrollbar {
     width: 10px;
@@ -155,6 +157,8 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+}
+  
 input,
 button,
 textarea,

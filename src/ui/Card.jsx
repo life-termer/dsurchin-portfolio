@@ -16,7 +16,7 @@ const StyledCard = styled.div`
   backdrop-filter: blur(3px) invert(3%);
   transition: height 0.5s ease-in-out, width 0.5s linear;
   border: var(--border-size) solid var(--color-grey-400);
-  @media (min-width: 900px) {
+  @media (hover: hover) {
     &[data-glow] {
       --spotlight-size: calc(var(--size, 150) * 1px);
       --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
@@ -155,7 +155,7 @@ const StyledCard = styled.div`
       }
     `}
   ${(props) =>
-    props.type === "filter" &&
+    (props.type === "filter" || props.type === "filter-2") &&
     css`
       padding: 10px 12px;
       min-width: 210px;
@@ -166,6 +166,19 @@ const StyledCard = styled.div`
       h5,
       h6 {
         margin-left: 6px;
+      }
+      @media (max-width: 750px) {
+        padding: 10px 0;
+      }
+    `}
+  ${(props) =>
+    props.type === "filter-2" &&
+    css`
+      @media (max-width: 750px) {
+        overflow-x: clip;
+        overflow-y: auto;
+        flex-grow: 1;
+        align-items: flex-start;
       }
     `}
   ${(props) =>

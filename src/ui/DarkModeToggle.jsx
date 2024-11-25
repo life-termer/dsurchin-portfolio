@@ -11,6 +11,10 @@ const StyledDarkModeToggle = styled.div`
   bottom: 45px;
   /* border: 1px solid var(--color-grey-300); */
   z-index: 999;
+  @media (max-width: 750px) {
+    right: 10px;
+    bottom: 38px;
+  }
 `;
 
 function DarkModeToggle() {

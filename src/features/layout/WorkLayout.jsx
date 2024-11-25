@@ -7,7 +7,7 @@ import WorkCard from "../../ui/WorkCard";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useMemo, useRef } from "react";
+import { useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 
 // gsap.registerPlugin(ScrollTrigger);
@@ -17,11 +17,23 @@ const StyledWorkLayout = styled.div`
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  justify-content: center;
 `;
 const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
+  @media (max-width: 1500px) {
+    gap: 3rem;
+  }
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 `;
 const GridItem = styled.div`
   position: relative;
@@ -29,6 +41,7 @@ const GridItem = styled.div`
   opacity: 0;
   top: 20px;
   visibility: hidden;
+  max-width: 420px;
 `;
 
 function WorkLayout() {
@@ -88,11 +101,6 @@ function WorkLayout() {
     },
     { dependencies: [searchParams], scope: scope, revertOnUpdate: true }
   );
-  // useEffect(() => {
-  //   console.log(workTimeline)
-  //   // workTimeline.play();
-  //   console.log("play");
-  // }, [sortedProjects, workTimeline]);
 
   return (
     <Container>

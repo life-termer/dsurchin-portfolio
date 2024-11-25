@@ -4,7 +4,7 @@ import { tags } from "../data/data-tags";
 import { useSearchParams } from "react-router-dom";
 import Card from "./Card";
 import FilterSort from "./FilterSort";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { LuFilter, LuFilterX } from "react-icons/lu";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -15,16 +15,24 @@ const StyledFiltersWrapper = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   position: fixed;
-  top: 200px;
+  top: 150px;
+  height: auto;
   left: 0;
-  transform: translateX(-100%);
+  transform: translate(-100%);
   transition: transform 0.3s ease-out;
   opacity: 0;
+  z-index: 999;
+  backdrop-filter: blur(5px);
   ${(props) =>
     props.$active &&
     css`
-      transform: translateX(0);
+      transform: translate(0);
     `}
+  @media (max-width: 750px) {
+    top: 150px;
+    left: 0;
+    height: calc(100dvh - 200px);
+  }
 `;
 const StyledFilters = styled.div`
   display: flex;
@@ -40,13 +48,17 @@ const FiltersButton = styled.div`
   padding: 4px;
   backdrop-filter: blur(10px);
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0;
   transform: translate(120%, -50%);
   transition: transform 0.3s ease-out;
+  /* @media (max-width: 750px) {
+    top: 20%;
+  } */
   &:hover {
     cursor: pointer;
   }
+
   ${(props) =>
     props.$active &&
     css`
@@ -55,14 +67,18 @@ const FiltersButton = styled.div`
   ${(props) =>
     props.type === "clear" &&
     css`
-      top: 46px;
+      top: calc(50% + 46px);
     `}
 `;
 
 function Filters() {
   const tagsList = tags;
   const filters = useRef();
-  const [active, setActive] = useState(true);
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  );
+  const [active, setActive] = useState(matches);
+  console.log(matches);
   const [searchParams, setSearchParams] = useSearchParams();
   const currentFilter = searchParams.get("filter");
   function handleClick(value) {
@@ -90,7 +106,6 @@ function Filters() {
         .to(filters.current, { display: "flex" })
         .to(filters.current, {
           opacity: 1,
-          top: 188,
           delay: 1.5,
           duration: 0.5,
           ease: "power1.out",
@@ -98,6 +113,13 @@ function Filters() {
     },
     { scope: filters }
   );
+
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 1800px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+    setActive(matches);
+  }, [matches]);
 
   return (
     <StyledFiltersWrapper ref={filters} $active={active}>
@@ -107,7 +129,7 @@ function Filters() {
           <FilterSort />
         </StyledFilters>
       </Card>
-      <Card type="filter">
+      <Card type="filter-2">
         <StyledFilters>
           {tagsList.map((tag) => {
             return (

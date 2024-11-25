@@ -98,8 +98,7 @@ function WorkCard({ project }) {
   const { name, year, mainImage, tags, link, id, github } = project;
   const gitId = id + Math.random();
   const img = mainImage.split(".");
-  const placeholderImg = `${img.at(0)}-sm.${img.at(1)}`;
-  console.log(placeholderImg);
+  // const placeholderImg = `${img.at(0)}-sm.${img.at(1)}`;
   function handleClick(link) {
     window.open(link, "_blank").focus();
   }
@@ -109,7 +108,8 @@ function WorkCard({ project }) {
       <ImageWrapper>
         <LazyLoadImage
           src={mainImage}
-          width={400}
+          // width={400}
+          width="100%"
           height={500}
           // placeholderSrc={placeholderImg}
           alt={mainImage}
