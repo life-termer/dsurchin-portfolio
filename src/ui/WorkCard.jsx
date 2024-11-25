@@ -97,7 +97,6 @@ const LinkBtn = styled.div`
 function WorkCard({ project }) {
   const { name, year, mainImage, tags, link, id, github } = project;
   const gitId = id + Math.random();
-  const img = mainImage.split(".");
   // const placeholderImg = `${img.at(0)}-sm.${img.at(1)}`;
   function handleClick(link) {
     window.open(link, "_blank").focus();

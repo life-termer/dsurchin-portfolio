@@ -10,8 +10,6 @@ import LayoutBackground from "../../ui/LayoutBackground";
 import DarkModeToggle from "../../ui/DarkModeToggle";
 import { useMouseMove } from "../../hooks/useMouseMove";
 import HomeLayout from "./HomeLayout";
-import { cursorOffSet } from "../../utils/helpers";
-import { breakpointDown, breakpointUp } from "../../styles/GlobalStyles";
 
 gsap.registerPlugin(ScrollTrigger);
 

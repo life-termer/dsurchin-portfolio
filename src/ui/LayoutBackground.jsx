@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import { useDarkMode } from "../context/DarkModeContext";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
 
 const BackgroundWrapper = styled.div`
   position: absolute;
@@ -46,7 +45,6 @@ const Background = styled.div`
 function LayoutBackground({ background }) {
   const { isDarkMode } = useDarkMode();
 
-  const ref = useRef();
   useGSAP(
     () => {
       gsap.to(background.current, {

@@ -3,7 +3,7 @@ import Container from "../../ui/Container";
 import Card from "../../ui/Card";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { HiOutlineDocumentText } from "react-icons/hi2";
 import AnimatedHeading from "../../ui/AnimatedHeading";
 import { Tooltip } from "react-tooltip";

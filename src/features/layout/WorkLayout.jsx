@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Container from "../../ui/Container";
 import Filters from "../../ui/Filters";
 import { projects } from "../../data/data-projects";
@@ -6,7 +6,7 @@ import Card from "../../ui/Card";
 import WorkCard from "../../ui/WorkCard";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 

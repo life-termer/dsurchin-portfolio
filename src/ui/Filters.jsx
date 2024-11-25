@@ -48,13 +48,13 @@ const FiltersButton = styled.div`
   padding: 4px;
   backdrop-filter: blur(10px);
   position: absolute;
-  top: 50%;
+  top: 0;
   right: 0;
   transform: translate(120%, -50%);
   transition: transform 0.3s ease-out;
-  /* @media (max-width: 750px) {
-    top: 20%;
-  } */
+  @media (max-width: 750px) {
+    top: 50%;
+  }
   &:hover {
     cursor: pointer;
   }
@@ -67,7 +67,10 @@ const FiltersButton = styled.div`
   ${(props) =>
     props.type === "clear" &&
     css`
-      top: calc(50% + 46px);
+      top: 46px;
+      @media (max-width: 750px) {
+        top: calc(50% + 46px);
+      }
     `}
 `;
 
