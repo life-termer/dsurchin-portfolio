@@ -21,7 +21,7 @@ const StyledAppLayout = styled.div`
   position: relative;
   background-color: var(--color-grey-400);
   z-index: 0;
-  @media (max-width: 1200px) {
+  @media (min-width: 1200px) {
     &:after {
       content: "";
       position: absolute;

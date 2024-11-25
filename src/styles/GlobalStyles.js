@@ -139,7 +139,7 @@ body {
   line-height: 1.4;
   font-size: 1.6rem;
 }
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
   /* width */
   ::-webkit-scrollbar {
     width: 10px;
