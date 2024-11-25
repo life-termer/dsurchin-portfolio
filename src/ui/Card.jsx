@@ -16,7 +16,7 @@ const StyledCard = styled.div`
   backdrop-filter: blur(3px) invert(3%);
   transition: height 0.5s ease-in-out, width 0.5s linear;
   border: var(--border-size) solid var(--color-grey-400);
-  @media (hover: hover) {
+  @media (max-width: 120px) {
     &[data-glow] {
       --spotlight-size: calc(var(--size, 150) * 1px);
       --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
