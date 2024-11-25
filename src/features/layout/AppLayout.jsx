@@ -48,7 +48,7 @@ const StyledAppLayout = styled.div`
 `;
 const Main = styled.main`
   overflow-y: auto;
-  height: calc(100vh - 60px);
+  height: calc(100dvh - 60px);
   position: relative;
 `;
 const ContainerWrapper = styled.div`
@@ -106,6 +106,7 @@ function AppLayout() {
 
   useEffect(() => {
     ScrollTrigger.refresh();
+    main.current.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
 
   useGSAP(
