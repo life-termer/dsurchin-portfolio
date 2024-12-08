@@ -16,7 +16,7 @@ const StyledCard = styled.div`
   backdrop-filter: blur(3px) invert(3%);
   transition: height 0.5s ease-in-out, width 0.5s linear;
   border: var(--border-size) solid var(--color-grey-400);
-  @media (min-width: 1200px) {
+  /* @media (min-width: 1200px) {
     &[data-glow] {
       --spotlight-size: calc(var(--size, 150) * 1px);
       --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
@@ -32,7 +32,6 @@ const StyledCard = styled.div`
         position: absolute;
         inset: calc(var(--border-size) * -1);
         border: var(--border-size) solid transparent;
-        /* border-radius: calc(var(--radius) * 1px); */
         backdrop-filter: blur(3px) invert(3%);
         background-attachment: fixed;
         background-size: calc(100% + (2 * var(--border-size)))
@@ -54,7 +53,7 @@ const StyledCard = styled.div`
         filter: brightness(1);
       }
     }
-  }
+  } */
   ${(props) =>
     props.type === "home" &&
     css`

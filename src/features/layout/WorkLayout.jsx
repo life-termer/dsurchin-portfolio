@@ -111,7 +111,7 @@ function WorkLayout() {
             return (
               <GridItem key={project.id} className="item">
                 <Card type="project">
-                  <WorkCard project={project}></WorkCard>
+                  <WorkCard project={project} data-glow="false"></WorkCard>
                 </Card>
               </GridItem>
             );

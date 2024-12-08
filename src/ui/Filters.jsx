@@ -81,7 +81,6 @@ function Filters() {
     window.matchMedia("(min-width: 768px)").matches
   );
   const [active, setActive] = useState(matches);
-  console.log(matches);
   const [searchParams, setSearchParams] = useSearchParams();
   const currentFilter = searchParams.get("filter");
   function handleClick(value) {

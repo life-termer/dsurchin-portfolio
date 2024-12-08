@@ -19,7 +19,7 @@ const StyledAppLayout = styled.div`
   position: relative;
   background-color: var(--color-grey-400);
   z-index: 0;
-  @media (min-width: 1200px) {
+  /* @media (min-width: 1200px) {
     &:after {
       content: "";
       position: absolute;
@@ -42,7 +42,7 @@ const StyledAppLayout = styled.div`
       background-origin: padding-box;
       z-index: -1;
     }
-  }
+  } */
 `;
 const Main = styled.main`
   overflow-y: auto;
@@ -99,7 +99,7 @@ function AppLayout() {
   const container = useRef();
   const main = useRef();
 
-  const [status] = useMouseMove();
+  // const [status] = useMouseMove();
   const { pathname } = useLocation();
 
   useEffect(() => {
