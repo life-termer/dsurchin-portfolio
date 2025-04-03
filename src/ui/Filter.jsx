@@ -7,6 +7,7 @@ const StyledFilter = styled.div`
   align-items: center;
   font-size: 0.9rem;
   gap: 0.4rem;
+
   ${(props) =>
     props.$isActive &&
     css`

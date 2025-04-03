@@ -17,6 +17,8 @@ const StyledFiltersWrapper = styled.div`
   position: fixed;
   top: 150px;
   height: auto;
+  max-height: calc(100vh - 200px);
+  min-height: 200px;
   left: 0;
   transform: translate(-100%);
   transition: transform 0.3s ease-out;
@@ -29,9 +31,9 @@ const StyledFiltersWrapper = styled.div`
       transform: translate(0);
     `}
   @media (max-width: 750px) {
-    top: 150px;
+    top: 130px;
     left: 0;
-    height: calc(100dvh - 200px);
+    max-height: calc(100dvh - 200px);
   }
 `;
 const StyledFilters = styled.div`
@@ -75,7 +77,8 @@ const FiltersButton = styled.div`
 `;
 
 function Filters() {
-  const tagsList = tags;
+  const tagsList = tags.sort((a, b) => a.name > b.name ? 1 : -1);;
+  const tagsListSorted = tagsList.sort((a, b) => a.name > b.name ? 1 : -1);
   const filters = useRef();
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 768px)").matches
@@ -133,14 +136,16 @@ function Filters() {
       </Card>
       <Card type="filter-2">
         <StyledFilters>
-          {tagsList.map((tag) => {
+          {tagsListSorted.map((tag) => {
             return (
-              <Filter
-                key={tag.name}
-                tag={tag}
-                isActive={tag.name === currentFilter}
-                onClick={() => handleClick(tag.name)}
-              />
+              tag.name != "JavaScript" && tag.name != "CSS" && (
+                <Filter
+                  key={tag.name}
+                  tag={tag}
+                  isActive={tag.name === currentFilter}
+                  onClick={() => handleClick(tag.name)}
+                />
+              )
             );
           })}
         </StyledFilters>

@@ -3,11 +3,14 @@ import { DiCss3, DiJavascript, DiReact } from "react-icons/di";
 import { FaBootstrap, FaLaravel, FaSass, FaWordpress } from "react-icons/fa6";
 import { PiGameControllerFill } from "react-icons/pi";
 import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
+import { TbBrandNextjs } from "react-icons/tb";
+import { BiLogoGraphql } from "react-icons/bi";
 import {
   SiDjango,
   SiReactquery,
   SiRedux,
   SiStyledcomponents,
+  SiContentful,
 } from "react-icons/si";
 
 export const tags = [
@@ -85,5 +88,20 @@ export const tags = [
     id: "015",
     name: "Phaser",
     icon: PiGameControllerFill,
+  },
+  {
+    id: "016",
+    name: "Next.js",
+    icon: TbBrandNextjs,
+  },
+  {
+    id: "017",
+    name: "GraphQL",
+    icon: BiLogoGraphql,
+  },
+  {
+    id: "018",
+    name: "Contentful",
+    icon: SiContentful,
   },
 ];

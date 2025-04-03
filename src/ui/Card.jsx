@@ -157,6 +157,7 @@ const StyledCard = styled.div`
     css`
       padding: 10px 12px;
       min-width: 210px;
+      background: var(--backdrop-color);
       h1,
       h2,
       h3,
@@ -172,6 +173,9 @@ const StyledCard = styled.div`
   ${(props) =>
     props.type === "filter-2" &&
     css`
+    display: block;
+      max-height: 500px;
+      overflow-y: scroll;
       @media (max-width: 750px) {
         overflow-x: clip;
         overflow-y: auto;

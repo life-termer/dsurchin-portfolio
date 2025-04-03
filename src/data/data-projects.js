@@ -12,7 +12,7 @@ export const projects = [
       "/difa/difa-03.jpg",
       "/difa/difa-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(12)],
+    tags: [tags.at(2), tags.at(3), tags.at(12)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -27,7 +27,7 @@ export const projects = [
       "/zupan/zupan-03.jpg",
       "/zupan/zupan-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(11)],
+    tags: [tags.at(2), tags.at(3), tags.at(11)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -42,7 +42,7 @@ export const projects = [
       "/turizem-loka/turizem-loka-03.jpg",
       "/turizem-loka/turizem-loka-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(10)],
+    tags: [tags.at(2), tags.at(3), tags.at(10)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -57,7 +57,7 @@ export const projects = [
       "/studio-mazzini/studio-mazzini-03.jpg",
       "/studio-mazzini/studio-mazzini-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(10)],
+    tags: [tags.at(2), tags.at(3), tags.at(10)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -72,7 +72,7 @@ export const projects = [
       "/nest/nest-03.jpg",
       "/nest/nest-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(10)],
+    tags: [tags.at(2), tags.at(3), tags.at(10)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -87,7 +87,7 @@ export const projects = [
       "/desert-soul/desert-soul-03.jpg",
       "/desert-soul/desert-soul-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(13)],
+    tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -102,7 +102,7 @@ export const projects = [
       "/epc/epc-03.jpg",
       "/epc/epc-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(13)],
+    tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -117,7 +117,7 @@ export const projects = [
       "/nextistence/nextistence-03.jpg",
       "/nextistence/nextistence-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(13)],
+    tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -132,7 +132,7 @@ export const projects = [
       "/april/april-03.jpg",
       "/april/april-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(13)],
+    tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -147,7 +147,7 @@ export const projects = [
       "/za-vodo/za-vodo-03.jpg",
       "/za-vodo/za-vodo-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(13)],
+    tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -162,7 +162,7 @@ export const projects = [
       "/vila-monet/vila-monet-03.jpg",
       "/vila-monet/vila-monet-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(13)],
+    tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -177,7 +177,7 @@ export const projects = [
       "/hervis/hervis-03.jpg",
       "/hervis/hervis-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(13)],
+    tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -192,7 +192,7 @@ export const projects = [
       "/porton/porton-03.jpg",
       "/porton/porton-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(2), tags.at(3), tags.at(13)],
+    tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },
@@ -208,8 +208,6 @@ export const projects = [
       "/memphis/memphis-04.jpg",
     ],
     tags: [
-      tags.at(0),
-      tags.at(1),
       tags.at(2),
       tags.at(3),
       tags.at(6),
@@ -233,7 +231,7 @@ export const projects = [
       "/pizza/pizza-03.jpg",
       "/pizza/pizza-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(4), tags.at(6), tags.at(7)],
+    tags: [tags.at(4), tags.at(6), tags.at(7)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     link: "https://react-demo-pizza-app.vercel.app/",
@@ -251,8 +249,6 @@ export const projects = [
       "/HMA/HMA-04.jpg",
     ],
     tags: [
-      tags.at(0),
-      tags.at(1),
       tags.at(5),
       tags.at(6),
       tags.at(8),
@@ -274,9 +270,23 @@ export const projects = [
       "/pp/pp-03.jpg",
       "/pp/pp-04.jpg",
     ],
-    tags: [tags.at(0), tags.at(1), tags.at(5), tags.at(6), tags.at(8)],
+    tags: [tags.at(5), tags.at(6), tags.at(8)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     github: "https://github.com/life-termer/dsurchin-portfolio",
+  },
+  {
+    id: "019",
+    name: "CovrLettr",
+    year: "2025",
+    mainImage: "/covrlettr/covrlettr-main.jpg",
+    images: [
+      "/covrlettr/covrlettr-01.jpg",
+    ],
+    tags: [tags.at(15), tags.at(4), tags.at(17), tags.at(9), tags.at(16)],
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    link: "https://covrlettr.eu/",
+    github: "https://github.com/life-termer/covrlettr",
   },
 ];
