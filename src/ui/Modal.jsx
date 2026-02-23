@@ -58,14 +58,15 @@ const Button = styled.button`
   top: 1.2rem;
   right: 1.9rem;
   z-index: 99;
+  color: var(--color-grey-800);
+  background-color: var( --backdrop-color);
   &:hover {
-    background-color: var(--color-grey-100);
+    color: var(--color-grey-500);
   }
 
   & svg {
     width: 2.4rem;
     height: 2.4rem;
-    color: var(--color-grey-500);
   }
 `;
 
