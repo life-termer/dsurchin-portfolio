@@ -13,8 +13,8 @@ import {
   SiAdobexd,
   SiLighthouse,
   SiVercel,
-  SiVisualstudio,
 } from "react-icons/si";
+import { BiLogoVisualStudio } from "react-icons/bi";
 import { VscVscode } from "react-icons/vsc";
 
 export const tools = [
@@ -26,7 +26,7 @@ export const tools = [
   {
     id: "002",
     name: "Visual Studio",
-    icon: SiVisualstudio,
+    icon: BiLogoVisualStudio,
   },
   {
     id: "003",

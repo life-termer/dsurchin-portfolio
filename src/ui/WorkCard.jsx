@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -101,7 +102,8 @@ const LinkBtn = styled.div`
 
 function WorkCard({ project }) {
   const { name, year, mainImage, tags, link, id, github } = project;
-  const gitId = id + Math.random();
+    const reactId = useId();
+    const gitId = `${id}-git-${reactId}`;
   // const placeholderImg = `${img.at(0)}-sm.${img.at(1)}`;
   function handleClick(link) {
     window.open(link, "_blank").focus();
@@ -131,7 +133,7 @@ function WorkCard({ project }) {
       <Tags>
         {tags.map((tag) => {
           const { icon: Icon, id, name } = tag;
-          const rId = id + Math.random();
+            const rId = `${id}-tag-${reactId}`;
           return (
             <Tag key={id}>
               <Icon data-tooltip-id={rId} data-tooltip-content={name} />

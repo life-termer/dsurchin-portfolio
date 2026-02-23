@@ -120,11 +120,16 @@ function Filters() {
   );
 
   useEffect(() => {
-    window
-      .matchMedia("(min-width: 1800px)")
-      .addEventListener("change", (e) => setMatches(e.matches));
-    setActive(matches);
-  }, [matches]);
+    const mediaQuery = window.matchMedia("(min-width: 1800px)");
+    const handler = (e) => {
+      setMatches(e.matches);
+      setActive(e.matches);
+    };
+    mediaQuery.addEventListener("change", handler);
+    return () => {
+      mediaQuery.removeEventListener("change", handler);
+    };
+  }, []);
 
   return (
     <StyledFiltersWrapper ref={filters} $active={active}>
