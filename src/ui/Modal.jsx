@@ -13,12 +13,20 @@ const StyledModal = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
+  width: 90%;
+  height: 90%;
   transform: translate(-50%, -50%);
   background-color: var(--color-grey-0);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
-  padding: 3.2rem 4rem;
-  transition: all 0.5s;
+  opacity: 0;
+  transition: opacity 0.3s;
+  &.modal-enter {
+    opacity: 1;
+  }
+  &.modal-exit {
+    opacity: 0;
+  }
 `;
 
 const Overlay = styled.div`
@@ -30,7 +38,14 @@ const Overlay = styled.div`
   background-color: var(--backdrop-color);
   backdrop-filter: blur(4px);
   z-index: 1000;
-  transition: all 0.5s;
+  opacity: 0;
+  transition: opacity 0.3s;
+  &.modal-enter {
+    opacity: 1;
+  }
+  &.modal-exit {
+    opacity: 0;
+  }
 `;
 
 const Button = styled.button`
@@ -65,46 +80,57 @@ const ModalContext = createContext();
 //2. Create parent component
 function Modal({ children }) {
   const [openName, setOpenName] = useState("");
+  const [transitionState, setTransitionState] = useState("");
 
-  const close = () => setOpenName("");
+  const close = () => {
+    setTransitionState("modal-exit");
+    setTimeout(() => {
+      setOpenName("");
+    }, 300);
+  }
   const open = setOpenName;
 
   return (
-    <ModalContext.Provider value={{ openName, close, open }}>
+    <ModalContext.Provider value={{ openName, close, open, transitionState, setTransitionState }}>
       {children}
     </ModalContext.Provider>
   );
 }
-//3. Create children components
-function Open({ children, opens: opensWindowName }) {
-  const { open } = useContext(ModalContext);
 
-  return cloneElement(children, { onClick: () => open(opensWindowName) });
+//3. Create children components
+function Open({ children, opens: opensWindowName}) {
+  const { open, setTransitionState } = useContext(ModalContext);
+
+  return cloneElement(children, { onClick: () => {
+    open(opensWindowName)
+    setTimeout(() => {
+      setTransitionState("modal-enter");
+    }, 300);
+  } });
 }
 
-function Window({ children, name }) {
-  const { openName, close } = useContext(ModalContext);
+function Window({ children, name, hasModalContent }) {
+  const { openName, close, transitionState, setTransitionState } = useContext(ModalContext);
 
-  const ref = useClickOutside(close);
-  // const ref = useRef();
+  const ref = useClickOutside(() => {
+    setTransitionState("modal-exit");
+    setTimeout(() => {
+      close();
+    }, 300);
+  });
+  console.log("rendering modal window", name, "openName", openName, "hasModalContent", hasModalContent);
 
-  // //Detecting a click outside modal window
-  // useEffect(function () {
-  //   function handleClick(e) {
-  //     if(ref.current && !ref.current.contains(e.target)) close();
-  //   }
-
-  //   document.addEventListener("click", handleClick, true);
-
-  //   return () => document.removeEventListener("click", handleClick, true);
-  // }, [close]);
-
-  if (name !== openName) return null;
+  if (name !== openName || !hasModalContent) return null;
   //React portal
   return createPortal(
-    <Overlay>
-      <StyledModal ref={ref}>
-        <Button onClick={close}>
+    <Overlay className={transitionState}>
+      <StyledModal className={transitionState} ref={ref}>
+        <Button onClick={() => {
+          setTransitionState("modal-exit");
+          setTimeout(() => {
+            close();
+          }, 300);
+        }}>
           <HiXMark />
         </Button>
         <div>{cloneElement(children, { onCloseModal: close })}</div>

@@ -5,6 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Tooltip } from "react-tooltip";
 import styled from "styled-components";
 import "react-lazy-load-image-component/src/effects/opacity.css";
+import Modal from './Modal';
 
 const StyledWorkCard = styled.div`
   position: relative;
@@ -101,7 +102,7 @@ const LinkBtn = styled.div`
 `;
 
 function WorkCard({ project }) {
-  const { name, year, mainImage, tags, link, id, github } = project;
+  const { name, year, mainImage, tags, link, id, github, hasModalContent } = project;
     const reactId = useId();
     const gitId = `${id}-git-${reactId}`;
   // const placeholderImg = `${img.at(0)}-sm.${img.at(1)}`;
@@ -111,21 +112,28 @@ function WorkCard({ project }) {
 
   return (
     <StyledWorkCard className={link ? "has-link" : ""}>
-      <ImageWrapper>
-        <LazyLoadImage
-          src={mainImage}
-          // width={400}
-          width="100%"
-          height={500}
-          // placeholderSrc={placeholderImg}
-          alt={mainImage}
-          effect="opacity"
-          wrapperProps={{
-            // If you need to, you can tweak the effect transition using the wrapper style.
-            style: { transitionDelay: "0.25s", transitionDuration: "1s" },
-          }}
-        />
-      </ImageWrapper>
+      <Modal>
+        <Modal.Open opens="myModal">
+            <ImageWrapper style={hasModalContent ? { cursor: "pointer" } : {}}>
+            <LazyLoadImage
+              src={mainImage}
+              // width={400}
+              width="100%"
+              height={500}
+              // placeholderSrc={placeholderImg}
+              alt={mainImage}
+              effect="opacity"
+              wrapperProps={{
+                // If you need to, you can tweak the effect transition using the wrapper style.
+                style: { transitionDelay: "0.25s", transitionDuration: "1s" },
+              }}
+            />
+          </ImageWrapper>
+        </Modal.Open>
+        <Modal.Window name="myModal" hasModalContent={hasModalContent}>
+          <div>testy</div>
+        </Modal.Window>
+      </Modal>
       <Heading>
         <h4>{name}</h4>
         <h4>{year}</h4>

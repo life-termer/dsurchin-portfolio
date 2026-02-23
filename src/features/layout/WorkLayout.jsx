@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useSearchParams } from "react-router-dom";
+import Modal from "../../ui/Modal";
 
 // gsap.registerPlugin(ScrollTrigger);
 
@@ -103,6 +104,7 @@ function WorkLayout() {
   );
 
   return (
+    <>
     <Container>
       <StyledWorkLayout ref={scope}>
         <Filters />
@@ -119,6 +121,7 @@ function WorkLayout() {
         </GridWrapper>
       </StyledWorkLayout>
     </Container>
+    </>
   );
 }
 

@@ -15,6 +15,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(12)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "002",
@@ -30,6 +31,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(11)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "003",
@@ -45,6 +47,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(10)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "004",
@@ -60,6 +63,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(10)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "005",
@@ -75,6 +79,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(10)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "006",
@@ -90,6 +95,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "007",
@@ -105,6 +111,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "008",
@@ -120,6 +127,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "009",
@@ -135,6 +143,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "010",
@@ -150,6 +159,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "011",
@@ -165,6 +175,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "012",
@@ -180,6 +191,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "013",
@@ -195,6 +207,7 @@ export const projects = [
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
   },
   {
     id: "014",
@@ -216,6 +229,7 @@ export const projects = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
     link: "https://life-termer.github.io/memphis/",
     github: "https://github.com/life-termer/memphis",
   },
@@ -234,6 +248,7 @@ export const projects = [
     tags: [tags.at(4), tags.at(6), tags.at(7)],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
     link: "https://react-demo-pizza-app.vercel.app/",
     github: "https://github.com/life-termer/react-demo-pizza-app",
   },
@@ -256,6 +271,7 @@ export const projects = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    hasModalContent: false,
     link: "https://ds-hotel-management-app.vercel.app/",
     github: "https://github.com/life-termer/hotel-management-app.git",
   },
@@ -271,6 +287,7 @@ export const projects = [
       "/pp/pp-04.jpg",
     ],
     tags: [tags.at(5), tags.at(6), tags.at(8)],
+    hasModalContent: false,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     github: "https://github.com/life-termer/dsurchin-portfolio",
@@ -284,6 +301,7 @@ export const projects = [
       "/covrlettr/covrlettr-01.jpg",
     ],
     tags: [tags.at(15), tags.at(4), tags.at(17), tags.at(9), tags.at(16)],
+    hasModalContent: false,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     link: "https://covrlettr.eu/",
