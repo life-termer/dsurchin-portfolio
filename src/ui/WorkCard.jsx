@@ -6,6 +6,7 @@ import { Tooltip } from "react-tooltip";
 import styled from "styled-components";
 import "react-lazy-load-image-component/src/effects/opacity.css";
 import Modal from './Modal';
+import SliderProjects from '../features/layout/SliderProjects';
 
 const StyledWorkCard = styled.div`
   position: relative;
@@ -131,7 +132,7 @@ function WorkCard({ project }) {
           </ImageWrapper>
         </Modal.Open>
         <Modal.Window name="myModal" hasModalContent={hasModalContent}>
-          <div>testy</div>
+          <SliderProjects images={project.images} />
         </Modal.Window>
       </Modal>
       <Heading>

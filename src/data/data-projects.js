@@ -9,8 +9,6 @@ export const projects = [
     images: [
       "/difa/difa-01.jpg",
       "/difa/difa-02.jpg",
-      "/difa/difa-03.jpg",
-      "/difa/difa-04.jpg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(12)],
     description:

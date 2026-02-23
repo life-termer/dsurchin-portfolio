@@ -16,11 +16,10 @@ const StyledModal = styled.div`
   width: 90%;
   height: 90%;
   transform: translate(-50%, -50%);
-  background-color: var(--color-grey-0);
   border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-lg);
   opacity: 0;
   transition: opacity 0.3s;
+  overflow: hidden;
   &.modal-enter {
     opacity: 1;
   }
@@ -58,7 +57,7 @@ const Button = styled.button`
   position: absolute;
   top: 1.2rem;
   right: 1.9rem;
-
+  z-index: 99;
   &:hover {
     background-color: var(--color-grey-100);
   }
@@ -66,9 +65,6 @@ const Button = styled.button`
   & svg {
     width: 2.4rem;
     height: 2.4rem;
-    /* Sometimes we need both */
-    /* fill: var(--color-grey-500);
-    stroke: var(--color-grey-500); */
     color: var(--color-grey-500);
   }
 `;
@@ -118,7 +114,6 @@ function Window({ children, name, hasModalContent }) {
       close();
     }, 300);
   });
-  console.log("rendering modal window", name, "openName", openName, "hasModalContent", hasModalContent);
 
   if (name !== openName || !hasModalContent) return null;
   //React portal
@@ -133,7 +128,7 @@ function Window({ children, name, hasModalContent }) {
         }}>
           <HiXMark />
         </Button>
-        <div>{cloneElement(children, { onCloseModal: close })}</div>
+        {cloneElement(children, { onCloseModal: close })}
       </StyledModal>
     </Overlay>,
     document.body
