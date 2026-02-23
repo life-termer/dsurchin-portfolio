@@ -10,15 +10,18 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 const SwiperWrapper = styled.div`
   width: 100%;
   height: 100%;
+  .swiper {
+    height: 100%;
+  }
   .swiper-wrapper {
     position: relative;
-    .swiper {
-      height: 100%;
-    }
     .swiper-slide {
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    .lazy-load-image-background {
+      height: 100%;
     }
     img {
       filter: none;
