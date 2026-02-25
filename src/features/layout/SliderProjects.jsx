@@ -1,4 +1,4 @@
-import { Autoplay, Pagination, EffectCreative } from "swiper/modules";
+import { Autoplay, Pagination, EffectCreative, Zoom } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -10,7 +10,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 const SwiperWrapper = styled.div`
   width: 100%;
   height: 100%;
-  .swiper {
+  .swiper,
+  .swiper-zoom-container {
     height: 100%;
   }
   .swiper-wrapper {
@@ -28,7 +29,14 @@ const SwiperWrapper = styled.div`
       object-fit: cover;
       border-radius: var(--border-radius-lg);
       mask-image: linear-gradient(to top, transparent 1%, black 11%);
+      cursor: pointer;
     }
+  }
+  .swiper-slide-zoomed img {
+    cursor: grab;
+  }
+  .swiper-slide-zoomed:active img {
+    cursor: grabbing;
   }
   .swiper-pagination {
     position: absolute;
@@ -57,7 +65,7 @@ function SliderProjects({ images }) {
   return (
     <SwiperWrapper>
       <Swiper
-        modules={[Autoplay, Pagination, EffectCreative]}
+        modules={[Autoplay, Pagination, EffectCreative, Zoom]}
         spaceBetween={0}
         slidesPerView={1}
         speed={1500}
@@ -72,24 +80,30 @@ function SliderProjects({ images }) {
             translate: ["100%", 0, 0],
           },
         }}
-        autoplay={{ delay: 3000 }}
+        zoom={{
+          minRatio: 1,
+          maxRatio: 1.5,
+          // panOnMouseMove: true,
+        }}
+        autoplay={{ delay: 3000, disableOnInteraction: true, pauseOnMouseEnter: true }}
       >
         {images.map((image, index) => {
           return (
             <SwiperSlide key={index}>
-              <LazyLoadImage
-                src={image}
-                width="100%"
-                height="100%"
-                
-                // placeholderSrc={placeholderImg}
-                alt={image}
-                effect="opacity"
-                wrapperProps={{
-                  // If you need to, you can tweak the effect transition using the wrapper style.
-                  style: { transitionDelay: "0.25s", transitionDuration: "1s" },
-                }}
-              />
+              <div className="swiper-zoom-container">
+                <LazyLoadImage
+                  src={image}
+                  width="100%"
+                  height="100%"
+                  // placeholderSrc={placeholderImg}
+                  alt={image}
+                  effect="opacity"
+                  wrapperProps={{
+                    // If you need to, you can tweak the effect transition using the wrapper style.
+                    style: { transitionDelay: "0.25s", transitionDuration: "1s" },
+                  }}
+                />
+              </div>
             </SwiperSlide>
           );
         })}
