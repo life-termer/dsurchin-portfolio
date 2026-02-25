@@ -16,7 +16,18 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(12)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      `<div>
+      <h5>My role:</h5>
+      <p>Full Stack Engineer</p>
+      <h5>Project description:</h5>
+      <p>Difa is a professional, modern platform designed to showcase the company’s expertise in producing high-quality aluminum and zinc alloy components. Built using Laravel, this website combines scalability, security, and functionality to present the company’s capabilities and services while offering a streamlined inquiry and order process for industrial clients.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>Fully optimized for desktop, tablet, and mobile devices.</li>
+      <li>Clean, modern interface reflecting the company’s commitment to precision and quality.</li>
+      <li>Fast-loading pages with intuitive navigation for seamless user experience.</li>
+      </ul>
+      </div>`,
     hasModalContent: true,
   },
   {
@@ -34,7 +45,19 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(11)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      `<div>
+      <h5>My role:</h5>
+      <p>Full Stack Engineer</p>
+      <h5>Project description:</h5>
+      <p>Robust and intuitive e-commerce platform designed for farmers and agricultural businesses to explore, customize, and purchase high-quality agricultural equipment. Built using Django, this website ensures a secure, seamless, and feature-rich experience, with a powerful configurator tool that enables users to tailor equipment to their specific needs.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>Step-by-step customization process.</li>
+      <li>Fully optimized for desktop, tablet, and mobile devices.</li>
+      <li>Options for selecting features.</li>
+      <li>Search and filter tools for brand, type, size, and usage requirements.</li>
+      </ul>
+      </div>`,
     hasModalContent: true,
   },
   {
@@ -50,7 +73,7 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(10)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     hasModalContent: false,
   },
   {
@@ -66,7 +89,7 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(10)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     hasModalContent: false,
   },
   {
@@ -82,7 +105,7 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(10)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     hasModalContent: false,
   },
   {
@@ -100,7 +123,20 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      `<div>
+      <h5>My role:</h5>
+      <p>Front End Engineer</p>
+      <h5>Project description:</h5>
+      <p>Desert Soul is a sleek, user-friendly platform crafted with cutting-edge front-end technologies. It offers motorcycle enthusiasts an immersive way to explore guided and self-guided motorcycle tours across stunning destinations worldwide.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>Fully optimized for mobile, tablet, and desktop.</li>
+      <li>Step-by-step booking process with real-time availability updates.</li>
+      <li>Secure payment gateway integration for instant bookings.</li>
+      <li>Personalization options, including bike upgrades and additional services.</li>
+      <li>Blog with travel tips, gear reviews, and expert advice.</li>
+      </ul>
+      </div>`,
     hasModalContent: true,
   },
   {
@@ -116,7 +152,7 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     hasModalContent: false,
   },
   {
@@ -132,7 +168,7 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     hasModalContent: false,
   },
   {
@@ -151,7 +187,18 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      `<div>
+      <h5>My role:</h5>
+      <p>Front End Engineer</p>
+      <h5>Project description:</h5>
+      <p>APRIL1550 is a visually captivating and user-friendly platform designed to showcase the charm and elegance of a small, luxurious hotel located in the heart of Ljubljana’s historic old town. With an integrated booking system, this website provides a seamless experience for travelers seeking to reserve their stay in a timeless, refined setting.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>Mobile-first design ensuring a flawless experience across devices.</li>
+      <li>Real-time availability calendar with room categories and prices.</li>
+      <li>Simple booking process with options for single, group, or long-term stays.</li>
+      </ul>
+      </div>`,
     hasModalContent: true,
   },
   {
@@ -168,7 +215,7 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     hasModalContent: true,
   },
   {
@@ -184,7 +231,7 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     hasModalContent: false,
   },
   {
@@ -200,7 +247,7 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     hasModalContent: false,
   },
   {
@@ -217,7 +264,18 @@ export const projects = [
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      `<div>
+      <h5>My role:</h5>
+      <p>Front End Engineer</p>
+      <h5>Project description:</h5>
+      <p>Cutting-edge platform designed to showcase the company’s global expertise in drug substance development and manufacturing. This website provides a seamless user experience, emphasizing the organization’s capabilities in delivering customized solutions to pharmaceutical companies worldwide.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>Elegant, modern design reflecting the organization’s professionalism and global reputation.</li>
+      <li>Fully optimized for desktop, tablet, and mobile devices.</li>
+      <li>Fast-loading pages to enhance user engagement.</li>
+      </ul>
+      </div>`,
     hasModalContent: true,
   },
   {
@@ -239,7 +297,7 @@ export const projects = [
       tags.at(14),
     ],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     hasModalContent: false,
     link: "https://life-termer.github.io/memphis/",
     github: "https://github.com/life-termer/memphis",
@@ -258,7 +316,7 @@ export const projects = [
     ],
     tags: [tags.at(4), tags.at(6), tags.at(7)],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     hasModalContent: false,
     link: "https://react-demo-pizza-app.vercel.app/",
     github: "https://github.com/life-termer/react-demo-pizza-app",
@@ -281,7 +339,7 @@ export const projects = [
       tags.at(9),
     ],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     hasModalContent: false,
     link: "https://ds-hotel-management-app.vercel.app/",
     github: "https://github.com/life-termer/hotel-management-app.git",
@@ -300,7 +358,7 @@ export const projects = [
     tags: [tags.at(5), tags.at(6), tags.at(8)],
     hasModalContent: false,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "",
     github: "https://github.com/life-termer/dsurchin-portfolio",
   },
   {
@@ -314,11 +372,21 @@ export const projects = [
       "/covrlettr/covrlettr-03.jpeg",
       "/covrlettr/covrlettr-04.jpeg",
     ],
-    tags: [tags.at(15), tags.at(4), tags.at(17), tags.at(9), tags.at(16)],
+    tags: [tags.at(15), tags.at(6), tags.at(4), tags.at(17), tags.at(9), tags.at(16)],
     hasModalContent: true,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    link: "https://covrlettr.eu/",
-    github: "https://github.com/life-termer/covrlettr",
+      `<div>
+      <h5>My role:</h5>
+      <p>Full Stack Developer</p>
+      <h5>Project description:</h5>
+      <p>CovrLettr is a web application that helps job seekers create personalized AI-generated cover letters based on their resumes and job descriptions.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li><span>Frontend:</span> Built with Next.js for a fast, server-rendered experience.</li>
+      <li><span>Styling & UI:</span> Designed with Tailwind CSS and ShadCN components for a modern and clean interface.</li>
+      <li><span>Content Management:</span> The blog section is powered by Contentful CMS, allowing for dynamic content updates.</li>
+      <li><span>Performance & SEO:</span> Optimized for speed and search engine visibility.</li>
+      </ul>
+      </div>`
   },
 ];

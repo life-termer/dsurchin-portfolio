@@ -57,7 +57,7 @@ const Button = styled.button`
   position: absolute;
   top: 1.2rem;
   right: 1.9rem;
-  z-index: 99;
+  z-index: 999;
   color: var(--color-grey-800);
   background-color: var( --backdrop-color);
   &:hover {
@@ -129,7 +129,8 @@ function Window({ children, name, hasModalContent }) {
         }}>
           <HiXMark />
         </Button>
-        {cloneElement(children, { onCloseModal: close })}
+        {/* {cloneElement(children, { onCloseModal: close })} */}
+        {children}
       </StyledModal>
     </Overlay>,
     document.body

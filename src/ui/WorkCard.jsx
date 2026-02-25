@@ -1,4 +1,4 @@
-import { useId } from 'react';
+import { use, useId, useState } from 'react';
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -7,6 +7,7 @@ import styled from "styled-components";
 import "react-lazy-load-image-component/src/effects/opacity.css";
 import Modal from './Modal';
 import SliderProjects from '../features/layout/SliderProjects';
+import { HiOutlineInformationCircle } from 'react-icons/hi2';
 
 const StyledWorkCard = styled.div`
   position: relative;
@@ -101,14 +102,92 @@ const LinkBtn = styled.div`
     cursor: pointer;
   }
 `;
+const DescriptionButton = styled.button`
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  border-radius: var(--border-radius-sm);
+  transform: translateX(0.8rem);
+  transition: all 0.2s;
+  position: absolute;
+  top: 1.2rem;
+  right: 6rem;
+  z-index: 999;
+  color: var(--color-grey-800);
+  background-color: var( --backdrop-color);
+  &:hover {
+    color: var(--color-grey-500);
+  }
+
+  & svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+`;
+const DescriptionContent = styled.div`
+  position: absolute;
+  background: #ffffffc1;
+  background: linear-gradient(to top, transparent 1%, var(--backdrop-color-dark) 11%);
+  color: var(--color-grey-800);
+  border: none;
+  padding: 3rem 1.5rem;
+  border-radius: var(--border-radius-sm);
+  transform: translateX(-100%);
+  transition: all 0.4s;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: auto;
+  width: min(100%, 500px);
+  display: flex;
+  align-items: center;
+  z-index: 99;
+  font-size: 1.25rem;
+  @media (max-width: 400px) {
+      font-size: 1rem;
+    }
+  div {
+    height: 100%;
+  }
+  p, li {
+    color: inherit
+  }
+  li {
+    margin-left: 1rem;
+    list-style: disc;
+  }
+  h5 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-grey-700);
+    @media (max-width: 400px) {
+      font-size: 1.25rem;
+    }
+  }
+  span {
+    color: var(--color-grey-700);
+    font-weight: 600;
+  }
+  p {
+    margin-bottom: 0.5rem;
+  }
+  &.open {
+    transform: translateX(0);
+  }
+`;
 
 function WorkCard({ project }) {
-  const { name, year, mainImage, tags, link, id, github, hasModalContent } = project;
+  const [descriptionOpen, setDescriptionOpen] = useState(false);
+  const { name, year, mainImage, tags, link, id, github, hasModalContent, description } = project;
     const reactId = useId();
     const gitId = `${id}-git-${reactId}`;
   // const placeholderImg = `${img.at(0)}-sm.${img.at(1)}`;
   function handleClick(link) {
     window.open(link, "_blank").focus();
+  }
+  function handleDescriptionClick() {
+    setDescriptionOpen((prev) => !prev);
   }
 
   return (
@@ -118,21 +197,25 @@ function WorkCard({ project }) {
             <ImageWrapper style={hasModalContent ? { cursor: "pointer" } : {}}>
             <LazyLoadImage
               src={mainImage}
-              // width={400}
               width="100%"
               height={500}
-              // placeholderSrc={placeholderImg}
               alt={mainImage}
               effect="opacity"
               wrapperProps={{
-                // If you need to, you can tweak the effect transition using the wrapper style.
                 style: { transitionDelay: "0.25s", transitionDuration: "1s" },
               }}
             />
           </ImageWrapper>
         </Modal.Open>
         <Modal.Window name="myModal" hasModalContent={hasModalContent}>
-          <SliderProjects images={project.images} />
+          <>
+            <SliderProjects images={project.images} />
+            {description.length > 0 ? 
+              <DescriptionButton onClick={handleDescriptionClick}>
+                  <HiOutlineInformationCircle />
+              </DescriptionButton> : ""}
+              <DescriptionContent className={descriptionOpen ? "open" : ''} dangerouslySetInnerHTML={{ __html: description }} />
+          </>
         </Modal.Window>
       </Modal>
       <Heading>

@@ -33,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
 
     /* --backdrop-color: rgba(0, 0, 0, 0.1); */
     --backdrop-color: rgba(255, 255, 255, 0.5);
+    --backdrop-color-dark: rgba(255, 255, 255, 0.75);
     --backdrop-color-brand: rgba(22, 29, 111, 0.6);
 
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -77,6 +78,7 @@ const GlobalStyles = createGlobalStyle`
     --color-red-800: #991b1b;
 
     --backdrop-color: rgba(0, 0, 0, 0.5);
+    --backdrop-color-dark: rgba(0, 0, 0, 0.75);
     --backdrop-color-brand: rgba(253, 222, 85, 0.4);
 
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
