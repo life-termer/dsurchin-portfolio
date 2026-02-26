@@ -1,5 +1,6 @@
 import { Autoplay, Pagination, EffectCreative, Zoom } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRef } from "react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -29,17 +30,18 @@ const SwiperWrapper = styled.div`
       object-fit: cover;
       border-radius: var(--border-radius-lg);
       mask-image: linear-gradient(to top, transparent 1%, black 11%);
+      cursor: zoom-in;
       @media (max-width: 991px) {
         object-fit: contain;
       }
     }
   }
   .swiper-slide-zoomed img {
-    cursor: grab;
+    cursor: zoom-out;
   }
-  .swiper-slide-zoomed:active img {
+  /* .swiper-slide-zoomed:active img {
     cursor: grabbing;
-  }
+  } */
   .swiper-pagination {
     position: absolute;
     bottom: 1.75rem;
@@ -64,9 +66,30 @@ const SwiperWrapper = styled.div`
   }
 `;
 function SliderProjects({ images }) {
+  const swiperRef = useRef(null);
+
+  // Track zoom state per slide
+  const zoomedSlides = useRef({});
+
+  const handleImageClick = (index) => {
+    const swiper = swiperRef.current?.swiper;
+    if (!swiper) return;
+    const isZoomed = zoomedSlides.current[index];
+    if (isZoomed) {
+      swiper.zoom.out();
+      zoomedSlides.current[index] = false;
+    } else {
+      swiper.slideTo(index);
+      swiper.zoom.in();
+      swiper.autoplay.stop();
+      zoomedSlides.current[index] = true;
+    }
+  };
+
   return (
     <SwiperWrapper>
       <Swiper
+        ref={swiperRef}
         modules={[Autoplay, Pagination, EffectCreative, Zoom]}
         spaceBetween={0}
         slidesPerView={1}
@@ -85,7 +108,8 @@ function SliderProjects({ images }) {
         zoom={{
           minRatio: 1,
           maxRatio: 1.5,
-          // panOnMouseMove: true,
+          panOnMouseMove: true,
+          toggle: false,
         }}
         autoplay={{ delay: 3000, disableOnInteraction: true, pauseOnMouseEnter: true }}
       >
@@ -97,13 +121,12 @@ function SliderProjects({ images }) {
                   src={image}
                   width="100%"
                   height="100%"
-                  // placeholderSrc={placeholderImg}
                   alt={image}
                   effect="opacity"
                   wrapperProps={{
-                    // If you need to, you can tweak the effect transition using the wrapper style.
                     style: { transitionDelay: "0.25s", transitionDuration: "1s" },
                   }}
+                  onClick={() => handleImageClick(index)}
                 />
               </div>
             </SwiperSlide>
