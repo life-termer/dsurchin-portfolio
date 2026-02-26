@@ -13,7 +13,6 @@ const StyledWorkCard = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  /* overflow: hidden; */
   z-index: 20;
   .react-tooltip {
     font-size: 0.8rem;
@@ -31,7 +30,6 @@ const StyledWorkCard = styled.div`
 const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
-  /* perspective: 1000px; */
   .lazy-load-image-background {
     display: block;
     width: 100%;

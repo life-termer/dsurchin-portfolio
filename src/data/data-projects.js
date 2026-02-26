@@ -15,17 +15,20 @@ export const projects = [
       "/difa/difa-06.jpeg ",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(12)],
-    description:
-      `<div>
+    description: `<div>
       <h5>My role:</h5>
-      <p>Full Stack Engineer</p>
+      <p>Front End Engineer</p>
       <h5>Project description:</h5>
-      <p>Difa is a professional, modern platform designed to showcase the company’s expertise in producing high-quality aluminum and zinc alloy components. Built using Laravel, this website combines scalability, security, and functionality to present the company’s capabilities and services while offering a streamlined inquiry and order process for industrial clients.</p>
+      <p>Corporate website for DIFA, a manufacturer of aluminum and zinc alloy components. I was responsible for the full website implementation, 
+      focusing on structure, performance, and a clean industrial presentation. The goal was to create a professional online presence that clearly 
+      communicates the company’s production capabilities.</p>
       <h5>Tech Stack & Features:</h5>
       <ul>
-      <li>Fully optimized for desktop, tablet, and mobile devices.</li>
-      <li>Clean, modern interface reflecting the company’s commitment to precision and quality.</li>
-      <li>Fast-loading pages with intuitive navigation for seamless user experience.</li>
+      <li>Laravel (used as CMS without custom backend development)</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Blog plugin integration</li>
+      <li>Responsive layout optimized for all devices</li>
+      <li>Structured product and production capability presentation</li>
       </ul>
       </div>`,
     hasModalContent: true,
@@ -44,18 +47,20 @@ export const projects = [
       "/zupan/zupan-06.jpeg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(11)],
-    description:
-      `<div>
+    description: `<div>
       <h5>My role:</h5>
       <p>Full Stack Engineer</p>
       <h5>Project description:</h5>
-      <p>Robust and intuitive e-commerce platform designed for farmers and agricultural businesses to explore, customize, and purchase high-quality agricultural equipment. Built using Django, this website ensures a secure, seamless, and feature-rich experience, with a powerful configurator tool that enables users to tailor equipment to their specific needs.</p>
+      <p>Website for Zupan, a manufacturer of agricultural equipment, including a custom product configurator tool. 
+      I was primarily responsible for the frontend development and also implemented backend logic for selected modules. 
+      The project focused on delivering a clear product structure and an interactive configuration experience.</p>
       <h5>Tech Stack & Features:</h5>
       <ul>
-      <li>Step-by-step customization process.</li>
-      <li>Fully optimized for desktop, tablet, and mobile devices.</li>
-      <li>Options for selecting features.</li>
-      <li>Search and filter tools for brand, type, size, and usage requirements.</li>
+      <li>Django (Python-based backend)</li>
+      <li>Custom product configurator tool</li>
+      <li>Frontend development (HTML, CSS, JavaScript)</li>
+      <li>Backend implementation for selected modules</li>
+      <li>Responsive and product-focused UI design</li>
       </ul>
       </div>`,
     hasModalContent: true,
@@ -72,8 +77,23 @@ export const projects = [
       "/turizem-loka/turizem-loka-04.jpg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(10)],
-    description:
-      "",
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Full Stack Engineer</p>
+      <h5>Project description:</h5>
+      <p>Tourism and booking website for Turizem Loka, promoting local accommodations 
+      and attractions. I built a fully custom WordPress theme tailored to the client’s branding and 
+      booking needs. The focus was on clear navigation, destination presentation, and a smooth reservation 
+      experience.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>WordPress (custom theme development)</li>
+      <li>Custom booking functionality integration</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Responsive, mobile-friendly design</li>
+      <li>Structured presentation of accommodations and local attractions</li>
+      </ul>
+      </div>`,
     hasModalContent: false,
   },
   {
@@ -88,8 +108,22 @@ export const projects = [
       "/studio-mazzini/studio-mazzini-04.jpg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(10)],
-    description:
-      "",
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Full Stack Engineer</p>
+      <h5>Project description:</h5>
+      <p>Website for Studio Mazzini, a web and creative agency. I handled the full development process 
+      and built a fully custom WordPress theme tailored to their branding and portfolio presentation. 
+      The goal was to create a modern, clean, and professional online presence.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>WordPress (custom theme development)</li>
+      <li>Full website development (frontend + CMS setup)</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Portfolio and services presentation structure</li>
+      <li>Responsive and performance-optimized design</li>
+      </ul>
+      </div>`,
     hasModalContent: false,
   },
   {
@@ -104,8 +138,22 @@ export const projects = [
       "/nest/nest-04.jpg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(10)],
-    description:
-      "",
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Full Stack Engineer</p>
+      <h5>Project description:</h5>
+      <p>corporate website for NEST Systems, a company specializing in automated MES (Manufacturing Execution Systems) solutions. 
+      I built a fully custom WordPress theme aligned with their technical and industrial focus. The project emphasized clear communication 
+      of complex software solutions and system integration services.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>WordPress (custom theme development)</li>
+      <li>Full frontend development (HTML, CSS, JavaScript)</li>
+      <li>Structured presentation of MES solutions and services</li>
+      <li>Multilingual support</li>
+      <li>Responsive and performance-optimized design</li>
+      </ul>
+      </div>`,
     hasModalContent: false,
   },
   {
@@ -122,19 +170,21 @@ export const projects = [
       "/desert-soul/desertsoul-06.jpeg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
-    description:
-      `<div>
+    description: `<div>
       <h5>My role:</h5>
       <p>Front End Engineer</p>
       <h5>Project description:</h5>
-      <p>Desert Soul is a sleek, user-friendly platform crafted with cutting-edge front-end technologies. It offers motorcycle enthusiasts an immersive way to explore guided and self-guided motorcycle tours across stunning destinations worldwide.</p>
+      <p>Frontend development of the Desert Soul website, a platform offering guided and 
+      self-guided motorcycle tours. I focused on building an engaging user interface, implementing booking 
+      functionality, and structuring the blog and tour content. The goal was to create an immersive and easy-to-
+      navigate travel experience.</p>
       <h5>Tech Stack & Features:</h5>
       <ul>
-      <li>Fully optimized for mobile, tablet, and desktop.</li>
-      <li>Step-by-step booking process with real-time availability updates.</li>
-      <li>Secure payment gateway integration for instant bookings.</li>
-      <li>Personalization options, including bike upgrades and additional services.</li>
-      <li>Blog with travel tips, gear reviews, and expert advice.</li>
+      <li>Frontend development (HTML, CSS, JavaScript)</li>
+      <li>Booking system integration</li>
+      <li>Tour listing and detail pages</li>
+      <li>Blog implementation and content structure</li>
+      <li>Responsive, mobile-optimized design</li>
       </ul>
       </div>`,
     hasModalContent: true,
@@ -151,8 +201,22 @@ export const projects = [
       "/epc/epc-04.jpg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
-    description:
-      "",
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Front End Engineer</p>
+      <h5>Project description:</h5>
+      <p>EPC Trnovlje website, representing the economic and business zones of Trnovlje and Bežigrajska. 
+      I implemented a news blog and structured content to provide clear information for businesses and investors. 
+      The focus was on usability, clarity, and professional presentation.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>Frontend development (HTML, CSS, JavaScript)</li>
+      <li>News blog implementation</li>
+      <li>Structured presentation of business zones</li>
+      <li>Accessibility options: larger fonts, high-contrast mode</li>
+      <li>Easy-to-navigate informational layout</li>
+      </ul>
+      </div>`,
     hasModalContent: false,
   },
   {
@@ -167,8 +231,22 @@ export const projects = [
       "/nextistence/nextistence-04.jpg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
-    description:
-      "",
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Front End Engineer</p>
+      <h5>Project description:</h5>
+      <p>Website for Nextistence, an institute focused on advanced technologies and innovative solutions for smart cities, 
+      industry, healthcare, and agrifood sectors. I implemented modern UI and structured content to 
+      clearly present their mission and expertise. The goal was to create an informative and engaging online 
+      presence that supports their vision and outreach</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>Frontend development (HTML, CSS, JavaScript)</li>
+      <li>News blog implementation</li>
+      <li>Structured presentation of technology areas and services</li>
+      <li>Responsive and mobile‑friendly design</li>
+      </ul>
+      </div>`,
     hasModalContent: false,
   },
   {
@@ -186,17 +264,18 @@ export const projects = [
       "/april/april-07.jpeg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
-    description:
-      `<div>
+    description: `<div>
       <h5>My role:</h5>
       <p>Front End Engineer</p>
       <h5>Project description:</h5>
-      <p>APRIL1550 is a visually captivating and user-friendly platform designed to showcase the charm and elegance of a small, luxurious hotel located in the heart of Ljubljana’s historic old town. With an integrated booking system, this website provides a seamless experience for travelers seeking to reserve their stay in a timeless, refined setting.</p>
+      <p>April 1550 is a boutique hotel located in Ljubljana’s historic old town. I implemented booking functionality through API integration and structured content to showcase rooms and services. The focus was on creating a seamless, user-friendly experience for hotel guests.</p>
       <h5>Tech Stack & Features:</h5>
       <ul>
-      <li>Mobile-first design ensuring a flawless experience across devices.</li>
-      <li>Real-time availability calendar with room categories and prices.</li>
-      <li>Simple booking process with options for single, group, or long-term stays.</li>
+      <li>Frontend development (HTML, CSS, JavaScript)</li>
+      <li>Booking API integration</li>
+      <li>Responsive and mobile-optimized design</li>
+      <li>Room and service presentation</li>
+      <li>Smooth and accessible user interface</li>
       </ul>
       </div>`,
     hasModalContent: true,
@@ -214,8 +293,21 @@ export const projects = [
       "/zavodo/zavodo-05.jpeg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
-    description:
-      "",
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Front End Engineer</p>
+      <h5>Project description:</h5>
+      <p>Online store selling shower and faucet heads with water filters. I focused on building 
+      a clean and user-friendly interface that showcases products and guides customers through 
+      the shopping experience. The project emphasized simplicity and usability for online shoppers.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>Frontend development (HTML, CSS, JavaScript)</li>
+      <li>Product catalog and detail pages</li>
+      <li>Responsive and mobile-friendly design</li>
+      <li>Clean and intuitive e-commerce interface</li>
+      </ul>
+      </div>`,
     hasModalContent: true,
   },
   {
@@ -230,8 +322,22 @@ export const projects = [
       "/vila-monet/vila-monet-04.jpg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
-    description:
-      "",
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Front End Engineer</p>
+      <h5>Project description:</h5>
+      <p>Vila Monet is a boutique hotel booking platform. I integrated the booking API and developed the 
+      interface to provide a smooth and intuitive reservation experience for guests. The focus was on usability, 
+      clarity, and a visually appealing presentation of rooms and services.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>Frontend development (HTML, CSS, JavaScript)</li>
+      <li>Booking API integration</li>
+      <li>Responsive and mobile-optimized design</li>
+      <li>Room and service presentation</li>
+      <li>Accessible and user-friendly interface</li>
+      </ul>
+      </div>`,
     hasModalContent: false,
   },
   {
@@ -246,8 +352,22 @@ export const projects = [
       "/hervis/hervis-04.jpg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
-    description:
-      "",
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Front End Engineer</p>
+      <h5>Project description:</h5>
+      <p>Hervis Storitve is a platform for renting sports equipment and related services. I implemented 
+      product filtering and structured content to help users easily find and rent equipment. The project 
+      focused on usability, smooth navigation, and a clear presentation of available products.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>Frontend development (HTML, CSS, JavaScript)</li>
+      <li>Product filtering system</li>
+      <li>Responsive and mobile-friendly design</li>
+      <li>Structured presentation of rental products and services</li>
+      <li>User-friendly navigation and interface</li>
+      </ul>
+      </div>`,
     hasModalContent: false,
   },
   {
@@ -263,17 +383,20 @@ export const projects = [
       "/porton/porton-05.jpeg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
-    description:
-      `<div>
+    description: `<div>
       <h5>My role:</h5>
       <p>Front End Engineer</p>
       <h5>Project description:</h5>
-      <p>Cutting-edge platform designed to showcase the company’s global expertise in drug substance development and manufacturing. This website provides a seamless user experience, emphasizing the organization’s capabilities in delivering customized solutions to pharmaceutical companies worldwide.</p>
+      <p>Platform for Porton PharmaTech, showcasing the company’s global expertise in drug substance development and manufacturing. 
+      I implemented a news blog and structured content to clearly present services, capabilities, and industry insights. 
+      The focus was on a professional, informative, and user-friendly online presence.</p>
       <h5>Tech Stack & Features:</h5>
       <ul>
-      <li>Elegant, modern design reflecting the organization’s professionalism and global reputation.</li>
-      <li>Fully optimized for desktop, tablet, and mobile devices.</li>
-      <li>Fast-loading pages to enhance user engagement.</li>
+      <li>Frontend development (HTML, CSS, JavaScript)</li>
+      <li>Blog implementation for news and updates</li>
+      <li>Structured presentation of services and capabilities</li>
+      <li>Responsive and mobile-friendly design</li>
+      <li>Professional and informative layout</li>
       </ul>
       </div>`,
     hasModalContent: true,
@@ -289,15 +412,25 @@ export const projects = [
       "/memphis/memphis-03.jpg",
       "/memphis/memphis-04.jpg",
     ],
-    tags: [
-      tags.at(2),
-      tags.at(3),
-      tags.at(6),
-      tags.at(7),
-      tags.at(14),
-    ],
-    description:
-      "",
+    tags: [tags.at(2), tags.at(3), tags.at(6), tags.at(7), tags.at(14)],
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Front End Engineer</p>
+      <h5>Project description:</h5>
+      <p>Memphis is a personal side project that recreates a Windows 98–style interface in the browser. 
+      I built it in React, occasionally using Redux, as a sandbox to experiment with new features, integrate APIs, 
+      and develop small JavaScript games using Canvas and the Phaser game engine. The project serves as a playground 
+      for learning and testing frontend and game development techniques.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>React with occasional Redux for state management</li>
+      <li>JavaScript Canvas and Phaser game engine integration</li>
+      <li>Windows 98–style UI and interactions</li>
+      <li>API integration for sandbox experiments</li>
+      <li>Frontend-focused learning and feature development environment</li>
+      <li>Interactive mini-games and experimental tools</li>
+      </ul>
+      </div>`,
     hasModalContent: false,
     link: "https://life-termer.github.io/memphis/",
     github: "https://github.com/life-termer/memphis",
@@ -315,8 +448,20 @@ export const projects = [
       "/pizza/pizza-04.jpg",
     ],
     tags: [tags.at(4), tags.at(6), tags.at(7)],
-    description:
-      "",
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Front End Engineer</p>
+      <h5>Project description:</h5>
+      <p>Fast Pizza is a small demo app built with React, showcasing a pizza ordering interface. I used Redux for 
+      state management and Tailwind CSS for styling. The project highlights interactive UI design for e-commerce functionality.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>React for frontend development</li>
+      <li>Redux for state management</li>
+      <li>Tailwind CSS for styling</li>
+      <li>Interactive pizza selection and ordering interface</li>
+      </ul>
+      </div>`,
     hasModalContent: false,
     link: "https://react-demo-pizza-app.vercel.app/",
     github: "https://github.com/life-termer/react-demo-pizza-app",
@@ -332,17 +477,26 @@ export const projects = [
       "/HMA/HMA-03.jpg",
       "/HMA/HMA-04.jpg",
     ],
-    tags: [
-      tags.at(5),
-      tags.at(6),
-      tags.at(8),
-      tags.at(9),
-    ],
-    description:
-      "",
+    tags: [tags.at(5), tags.at(6), tags.at(8), tags.at(9)],
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Full Stack Developer</p>
+      <h5>Project description:</h5>
+      <p>Hotel Management App is a demo dashboard for managing hotel bookings. I built it with React, using Supabase 
+      for the backend database and Styled Components for styling. The project focuses on providing a clean, interactive 
+      interface for managing reservations and hotel data.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>React for frontend development</li>
+      <li>Supabase as backend database</li>
+      <li>Booking management dashboard</li>
+      <li>Demo environment for hotel administration tasks</li>
+      </ul>
+      </div>`,
     hasModalContent: false,
     link: "https://ds-hotel-management-app.vercel.app/",
     github: "https://github.com/life-termer/hotel-management-app.git",
+    
   },
   {
     id: "017",
@@ -357,8 +511,21 @@ export const projects = [
     ],
     tags: [tags.at(5), tags.at(6), tags.at(8)],
     hasModalContent: false,
-    description:
-      "",
+    description: `<div>
+      <h5>My role:</h5>
+      <p>Front End Engineer</p>
+      <h5>Project description:</h5>
+      <p>My personal portfolio website showcases my projects with filtering options based on time and technology. 
+      I built it in React using Styled Components to create a clean and interactive design. The focus is on 
+      presenting my work clearly and providing an intuitive user experience.</p>
+      <h5>Tech Stack & Features:</h5>
+      <ul>
+      <li>React for frontend development</li>
+      <li>Project filtering by time and technology</li>
+      <li>Responsive and mobile-friendly layout</li>
+      <li>Interactive project showcase and navigation</li>
+      </ul>
+      </div>`,
     github: "https://github.com/life-termer/dsurchin-portfolio",
   },
   {
@@ -372,21 +539,34 @@ export const projects = [
       "/covrlettr/covrlettr-03.jpeg",
       "/covrlettr/covrlettr-04.jpeg",
     ],
-    tags: [tags.at(15), tags.at(6), tags.at(4), tags.at(17), tags.at(9), tags.at(16)],
+    tags: [
+      tags.at(15),
+      tags.at(6),
+      tags.at(4),
+      tags.at(17),
+      tags.at(9),
+      tags.at(16),
+    ],
     hasModalContent: true,
-    description:
-      `<div>
+    description: `<div>
       <h5>My role:</h5>
       <p>Full Stack Developer</p>
       <h5>Project description:</h5>
-      <p>CovrLettr is a web application that helps job seekers create personalized AI-generated cover letters based on their resumes and job descriptions.</p>
+      <p>CovrLettr is an app that generates personalized AI-powered cover letters based on user input and job 
+      descriptions. I developed the frontend using React and Next.js with Tailwind CSS, implemented the backend 
+      with Supabase, and integrated a blog via Contentful CMS with GraphQL. The project emphasizes user-friendly design, 
+      AI-driven content generation, and smooth performance.</p>
       <h5>Tech Stack & Features:</h5>
       <ul>
-      <li><span>Frontend:</span> Built with Next.js for a fast, server-rendered experience.</li>
-      <li><span>Styling & UI:</span> Designed with Tailwind CSS and ShadCN components for a modern and clean interface.</li>
-      <li><span>Content Management:</span> The blog section is powered by Contentful CMS, allowing for dynamic content updates.</li>
-      <li><span>Performance & SEO:</span> Optimized for speed and search engine visibility.</li>
+      <li>React and Next.js for frontend development</li>
+      <li>Tailwind CSS for styling</li>
+      <li>Supabase for backend database and authentication</li>
+      <li>Contentful CMS with GraphQL for blog content</li>
+      <li>AI-assisted personalized cover letter creation</li>
+      <li>CV export functionality (plain text and PDF)</li>
       </ul>
-      </div>`
+      </div>`,
+      link: "https://covrlettr.eu/",
+      github: "https://github.com/life-termer/covrlettr",
   },
 ];

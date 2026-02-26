@@ -29,7 +29,9 @@ const SwiperWrapper = styled.div`
       object-fit: cover;
       border-radius: var(--border-radius-lg);
       mask-image: linear-gradient(to top, transparent 1%, black 11%);
-      cursor: pointer;
+      @media (max-width: 991px) {
+        object-fit: contain;
+      }
     }
   }
   .swiper-slide-zoomed img {
