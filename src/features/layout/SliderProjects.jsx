@@ -111,7 +111,7 @@ function SliderProjects({ images }) {
           panOnMouseMove: true,
           toggle: false,
         }}
-        autoplay={{ delay: 3000, disableOnInteraction: true, pauseOnMouseEnter: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: true, pauseOnMouseEnter: false }}
       >
         {images.map((image, index) => {
           return (

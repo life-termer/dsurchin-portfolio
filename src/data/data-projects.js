@@ -71,10 +71,11 @@ export const projects = [
     year: "2022",
     mainImage: "/turizem-loka/turizem-loka-main.jpg",
     images: [
-      "/turizem-loka/turizem-loka-01.jpg",
-      "/turizem-loka/turizem-loka-02.jpg",
-      "/turizem-loka/turizem-loka-03.jpg",
-      "/turizem-loka/turizem-loka-04.jpg",
+      "/turizem-loka/turizem-loka-01.jpeg",
+      "/turizem-loka/turizem-loka-02.jpeg",
+      "/turizem-loka/turizem-loka-03.jpeg",
+      "/turizem-loka/turizem-loka-04.jpeg",
+      "/turizem-loka/turizem-loka-05.jpeg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(10)],
     description: `<div>
@@ -94,7 +95,7 @@ export const projects = [
       <li>Structured presentation of accommodations and local attractions</li>
       </ul>
       </div>`,
-    hasModalContent: false,
+    hasModalContent: true,
   },
   {
     id: "004",
@@ -102,10 +103,12 @@ export const projects = [
     year: "2022",
     mainImage: "/studio-mazzini/studio-mazzini-main.jpg",
     images: [
-      "/studio-mazzini/studio-mazzini-01.jpg",
-      "/studio-mazzini/studio-mazzini-02.jpg",
-      "/studio-mazzini/studio-mazzini-03.jpg",
-      "/studio-mazzini/studio-mazzini-04.jpg",
+      "/studio-mazzini/studio-mazzini-01.jpeg",
+      "/studio-mazzini/studio-mazzini-02.jpeg",
+      "/studio-mazzini/studio-mazzini-03.jpeg",
+      "/studio-mazzini/studio-mazzini-04.jpeg",
+      "/studio-mazzini/studio-mazzini-05.jpeg",
+      "/studio-mazzini/studio-mazzini-06.jpeg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(10)],
     description: `<div>
@@ -124,7 +127,7 @@ export const projects = [
       <li>Responsive and performance-optimized design</li>
       </ul>
       </div>`,
-    hasModalContent: false,
+    hasModalContent: true,
   },
   {
     id: "005",
@@ -132,10 +135,12 @@ export const projects = [
     year: "2022",
     mainImage: "/nest/nest-main.jpg",
     images: [
-      "/nest/nest-01.jpg",
-      "/nest/nest-02.jpg",
-      "/nest/nest-03.jpg",
-      "/nest/nest-04.jpg",
+      "/nest/nest-01.jpeg",
+      "/nest/nest-02.jpeg",
+      "/nest/nest-03.jpeg",
+      "/nest/nest-04.jpeg",
+      "/nest/nest-05.jpeg",
+      "/nest/nest-06.jpeg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(10)],
     description: `<div>
@@ -154,7 +159,7 @@ export const projects = [
       <li>Responsive and performance-optimized design</li>
       </ul>
       </div>`,
-    hasModalContent: false,
+    hasModalContent: true,
   },
   {
     id: "006",
@@ -195,10 +200,12 @@ export const projects = [
     year: "2023",
     mainImage: "/epc/epc-main.jpg",
     images: [
-      "/epc/epc-01.jpg",
-      "/epc/epc-02.jpg",
-      "/epc/epc-03.jpg",
-      "/epc/epc-04.jpg",
+      "/epc/epc-01.jpeg",
+      "/epc/epc-02.jpeg",
+      "/epc/epc-03.jpeg",
+      "/epc/epc-04.jpeg",
+      "/epc/epc-05.jpeg",
+      "/epc/epc-06.jpeg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description: `<div>
@@ -217,7 +224,7 @@ export const projects = [
       <li>Easy-to-navigate informational layout</li>
       </ul>
       </div>`,
-    hasModalContent: false,
+    hasModalContent: true,
   },
   {
     id: "008",
@@ -225,10 +232,11 @@ export const projects = [
     year: "2023",
     mainImage: "/nextistence/nextistence-main.jpg",
     images: [
-      "/nextistence/nextistence-01.jpg",
-      "/nextistence/nextistence-02.jpg",
-      "/nextistence/nextistence-03.jpg",
-      "/nextistence/nextistence-04.jpg",
+      "/nextistence/nextistence-01.jpeg",
+      "/nextistence/nextistence-02.jpeg",
+      "/nextistence/nextistence-03.jpeg",
+      "/nextistence/nextistence-04.jpeg",
+      "/nextistence/nextistence-05.jpeg",
     ],
     tags: [tags.at(2), tags.at(3), tags.at(13)],
     description: `<div>
@@ -247,7 +255,7 @@ export const projects = [
       <li>Responsive and mobile‑friendly design</li>
       </ul>
       </div>`,
-    hasModalContent: false,
+    hasModalContent: true,
   },
   {
     id: "009",
