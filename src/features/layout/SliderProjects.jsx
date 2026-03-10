@@ -30,15 +30,15 @@ const SwiperWrapper = styled.div`
       object-fit: cover;
       border-radius: var(--border-radius-lg);
       mask-image: linear-gradient(to top, transparent 1%, black 11%);
-      cursor: zoom-in;
+      //cursor: zoom-in;
       @media (max-width: 991px) {
         object-fit: contain;
       }
     }
   }
-  .swiper-slide-zoomed img {
+  /* .swiper-slide-zoomed img {
     cursor: zoom-out;
-  }
+  } */
   /* .swiper-slide-zoomed:active img {
     cursor: grabbing;
   } */
@@ -71,20 +71,20 @@ function SliderProjects({ images }) {
   // Track zoom state per slide
   const zoomedSlides = useRef({});
 
-  const handleImageClick = (index) => {
-    const swiper = swiperRef.current?.swiper;
-    if (!swiper) return;
-    const isZoomed = zoomedSlides.current[index];
-    if (isZoomed) {
-      swiper.zoom.out();
-      zoomedSlides.current[index] = false;
-    } else {
-      swiper.slideTo(index);
-      swiper.zoom.in();
-      swiper.autoplay.stop();
-      zoomedSlides.current[index] = true;
-    }
-  };
+  // const handleImageClick = (index) => {
+  //   const swiper = swiperRef.current?.swiper;
+  //   if (!swiper) return;
+  //   const isZoomed = zoomedSlides.current[index];
+  //   if (isZoomed) {
+  //     swiper.zoom.out();
+  //     zoomedSlides.current[index] = false;
+  //   } else {
+  //     swiper.slideTo(index);
+  //     swiper.zoom.in();
+  //     swiper.autoplay.stop();
+  //     zoomedSlides.current[index] = true;
+  //   }
+  // };
 
   return (
     <SwiperWrapper>
@@ -126,7 +126,7 @@ function SliderProjects({ images }) {
                   wrapperProps={{
                     style: { transitionDelay: "0.25s", transitionDuration: "1s" },
                   }}
-                  onClick={() => handleImageClick(index)}
+                  //onClick={() => handleImageClick(index)}
                 />
               </div>
             </SwiperSlide>
